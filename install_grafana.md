@@ -4,33 +4,38 @@
 Pratite korake za instalaciju Grafana servera na Ubuntu virtualni server
 
 
-1. Ažurirajte sistemske pakete:
+1. Install the prerequisite packages:
+```
+sudo apt-get install -y apt-transport-https software-properties-common wget
+```
+
+2. Import the GPG key:
+```
+sudo mkdir -p /etc/apt/keyrings/
+wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+```
+
+3. To add a repository for stable releases, run the following command:
+```
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+```
+
+4. Run the following command to update the list of available packages:
 ```
 sudo apt-get update
 ```
 
-2. Preuzmite i instalirajte GPG ključ:
+5. To install Grafana OSS, run the following command:
 ```
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-```
-
-3. Dodajte Grafana repozitorij:
-```
-echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
-```
-
-4. Ažurirajte repozitorije i instalirajte Grafana:
-```
-sudo apt-get update
 sudo apt-get install grafana
 ```
 
-5. Pokrenite Grafana servis:
+6. Pokrenite Grafana servis:
 ```
 sudo systemctl start grafana-server
 ```
 
-6. Provjerite Grafana servis
+7. Provjerite Grafana servis
 ```
 sudo systemctl status grafana-server
 ```
