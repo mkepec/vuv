@@ -58,11 +58,11 @@ scrape_configs:
 
   - job_name: "node_exporter"
     static_configs:
-      - targets: ["localhost:9100"]
+      - targets: ["<VM_IP>:9100"]
 
   - job_name: "snmp_exporter"
     static_configs:
-      - targets: ["localhost:9116"]  # Port za SNMP eksporter
+      - targets: ["<VM_IP>:9116"]  # Port za SNMP eksporter
 
   - job_name: "windows_exporter"
     static_configs:
@@ -98,7 +98,7 @@ docker run --rm -d --name grafana \
 ## 5. Postavljanje exportera 
 ### 5.1. Node Exporter (Linux VM) 
 ```bash
-docker run -d --name node_exporter \
+docker run --rm -d --name node_exporter \
   --net="host" \
   -v "/:/host:ro,rslave" \
   quay.io/prometheus/node-exporter:latest \
@@ -110,7 +110,7 @@ docker run -d --name node_exporter \
 
 ### 5.2. SNMP Exporter (Mrežna oprema) 
 ```bash
-docker run -d --name snmp_exporter \
+docker run --rm -d --name snmp_exporter \
   -p 9116:9116 \
   -v ~/prometheus/snmp.yml:/etc/snmp_exporter/snmp.yml \
   prom/snmp-exporter:latest
