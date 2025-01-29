@@ -87,7 +87,7 @@ docker run --rm -d --name prometheus \
 ## 4. Pokretanje Grafane
 ### 4.1. Pokrenite Grafana container
 ```bash
-docker run -d --name grafana \
+docker run --rm -d --name grafana \
   -p 3000:3000 \
   grafana/grafana:latest
 ```
