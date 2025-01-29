@@ -12,7 +12,6 @@ sudo apt update && sudo apt upgrade -y
 ip a
 ```
 > IP adresu računala u labu provjerite s naredbom `ipconfig` kroz `cmd`
-- 
 
 ## 2. Instalacija Docker-a
 ### 2.1. Instalacija Docker Engine
