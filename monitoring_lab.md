@@ -109,6 +109,11 @@ docker run --rm -d --name node_exporter \
 - Provjerite `http://<VM_IP>:9100/metrics` za sirove metrike.
 
 ### 5.2. SNMP Exporter (Mrežna oprema) 
+1. Preuzimanje generičke `snmp.yml` datoteke 
+```bash
+wget https://raw.githubusercontent.com/prometheus/snmp_exporter/refs/heads/main/snmp.yml
+```
+2. Pokretanje SNMP exportera
 ```bash
 docker run --rm -d --name snmp_exporter \
   -p 9116:9116 \
