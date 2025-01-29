@@ -42,6 +42,7 @@ Ukoliko je Docker uspješno instaliran možete nastaviti s podešavanjem i pokre
 ```bash
 mkdir ~/prometheus && cd ~/prometheus
 mkdir config data
+chmod -R 777 ~/prometheus/data
 ```
 
 ### 3.2. Kreirajte `prometheus.yml`
@@ -71,7 +72,7 @@ scrape_configs:
 
 ### 3.3. Pokrenite Prometheus container 
 ```bash
-docker run -d --name prometheus \
+docker run --rm -d --name prometheus \
   -p 9090:9090 \
   -v ~/prometheus/config:/etc/prometheus \
   -v ~/prometheus/data:/prometheus \
