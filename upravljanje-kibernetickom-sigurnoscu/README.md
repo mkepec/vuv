@@ -1,3 +1,72 @@
+📄 Osvrt na prvotno priloženi prijedlog predmeta („Upravljanje kibernetičkom sigurnošću“)
+Prvotni dokument (PDF) sadrži dobro strukturiran plan predavanja i vježbi raspoređenih kroz 15 tjedana s 2+2 sata tjedno. Nudi široki spektar tema koje obuhvaćaju sve bitne dijelove kibernetičke sigurnosti: standarde, mrežnu i aplikacijsku sigurnost, IAM, incident response, cloud i OT sigurnost.
+
+✅ Prednosti:
+Obuhvaća ključne teme kibernetičke sigurnosti.
+
+Kombinira teoriju i praksu kroz laboratorijske vježbe.
+
+Dotiče se aktualnih i modernih aspekata sigurnosti (npr. DevSecOps, cloud, OT).
+
+⚠️ Ograničenja:
+Teme su ponekad opisane vrlo kratko bez jasnog cilja predavanja/vježbe.
+
+Nema eksplicitnih ishoda učenja po tjednu.
+
+Ne postoji jasan prijedlog za završni projekt.
+
+Labovi su navedeni, ali nisu dosljedno povezani s teorijom i ne uključuju dodatne izazove ili mogućnosti.
+
+🆕 Poboljšanja u novoj verziji
+Nova verzija silabusa značajno proširuje i unaprjeđuje izvorni prijedlog na sljedeće načine:
+
+🔹 Strukturiranije:
+Jasno raspoređeni tjedni moduli s opisima predavanja i laboratorijskih vježbi.
+
+Svaki tjedan povezan s jednim ili više općih ishoda učenja (njih 8), što olakšava vrednovanje i usklađivanje sa standardima visokog obrazovanja.
+
+🔹 Opsežnija i realističnija laboratorijska komponenta:
+Uvedeni su konkretni alati (pfSense, Burp Suite, OpenSSL, ELK stack, Metasploit itd.).
+
+Predložena je integracija AWS cloud resursa za izvođenje određenih vježbi (npr. IAM, CloudTrail, VPC).
+
+Uvedene su mogućnosti za dodatne bodove i samostalni mini-projekt u završnim tjednima.
+
+🔹 Tematski fokusiranije:
+Teme su pažljivije raspoređene: uvod, standardi, operativna sigurnost, razvoj, specifična okruženja (cloud, OT, IoT), etika, projekt.
+
+Obuhvaćene su ključne teme koje su nedostajale ili bile površno obrađene u originalu, poput:
+
+Threat modeling
+
+DevSecOps i SAST/DAST
+
+SOC/SIEM pristup kroz ELK
+
+Penetration testing faze i izvještavanje
+
+❌ Izbačeno ili smanjeno u fokusu:
+Niti jedna ključna tema nije potpuno izbačena, ali su neki sadržaji reorganizirani:
+
+Teme poput sigurnosnih okvira i politika sada su koncentrirane u prva tri tjedna.
+
+Sigurnost baza podataka nije posebno naglašena — može se uključiti kao dodatni zadatak ako bude interesa.
+
+✅ Zaključak
+Nova verzija je:
+
+didaktički kvalitetnija
+
+praktično orijentiranija
+
+usklađena s trendovima i tržišnim potrebama
+
+otvorena za proširenja (AWS, dodatne vježbe, projekti)
+
+Ako želiš, mogu sada pripremiti i sve kao formalni predložak za ISVU/ECTS dokumentaciju (s opisom cilja predmeta, sadržajem po tjednima, ishodima i vrstama provjere znanja). Želiš li to?
+
+
+
 # Predmet: Upravljanje kibernetičkom sigurnošću
 
 **Razina:** Diplomski studij, smjer programsko inženjerstvo  
