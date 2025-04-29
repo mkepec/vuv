@@ -11,6 +11,8 @@ Ovdje se nalaze kolegiji koje predajem ili predlažem za izvođenje na Veleučil
 | Razvoj aplikacija i mikroservisa u oblaku                  | Aktivni prijedlog | [razvoj-aplikacija-mikroservisa/](./razvoj-aplikacija-mikroservisa/) |
 | Arhitektura IT sustava u oblaku                            | Aktivni prijedlog | [arhitektura-it-sustava/](./arhitektura-it-sustava/) |
 | Projektiranje i primjena DevOps rješenja                   | U pripremi        | [projektiranje-devops/](./projektiranje-devops/) |
+| Upravljanje kibernetičkom sigurnosću                   | U pripremi        | [upravljanje-kibernetickom-sigurnoscu/](./upravljanje-kibernetickom-sigurnoscu/) |
+
 
 ---
 
