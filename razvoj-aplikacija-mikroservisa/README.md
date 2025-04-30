@@ -1,51 +1,53 @@
-# Arhitektura IT sustava u oblaku
+# Razvoj aplikacija i mikroservisa u oblaku
 
 ## Opći podaci o predmetu
 
-| **NAZIV KOLEGIJA**                               | IT sustavi u oblaku                                                                |
+| **NAZIV KOLEGIJA**                               | Razvoj aplikacija i mikroservisa u oblaku                                          |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------- |
 | **Studijski program**                            | Stručni diplomski studij Računarstvo, modul Programsko inženjerstvo                |
 | **Nositelj kolegija**                            | Marin Kepec struč.spec.ing.techn.inf.                                              |
 | **Suradnik na kolegiju**                         |                                                                                    |
 | **Status kolegija**                              | Redovni                                                                            |
-| **Godina**                                       | 1. godina (2. semestar)                                                            |
+| **Godina**                                       | 1. godina (1. semestar)                                                            |
 | **Bodovna vrijednost i oblik izvođenja nastave** | **ECTS koeficijent opterećenja studenata:** 6 <br> **Broj sati (P+V+S):** 15+30+15 |
+
 
 ## Opis kolegija
 ### Ciljevi kolegija
-Student će steći praktična znanja i vještine projektiranja i implementacije arhitektura IT sustava u oblaku koristeći AWS platformu. Kroz kolegij, student će naučiti kako dizajnirati, implementirati i optimizirati svaki sloj arhitekture - od pohrane podataka, računalnih resursa i baza podataka do mrežne infrastrukture. Također će usvojiti principe AWS Well-Architected Frameworka, naučiti kako osigurati visoku dostupnost, skalabilnost i sigurnost sustava, implementirati automatizaciju infrastrukture kao koda te primijeniti najbolje prakse u dizajniranju cost-optimiziranih arhitektura. Student će steći kompetencije za evaluaciju i unaprjeđenje postojećih arhitektura te projektiranje novih rješenja prilagođenih specifičnim poslovnim zahtjevima.
+Student će steći praktična znanja i vještine razvoja aplikacija i mikroservisa u cloud okruženju koristeći AWS platformu. Kroz kolegij, student će naučiti programski pristupati i upravljati cloud resursima, razbiti monolitnu aplikaciju na mikroservise, implementirati serverless arhitekturu, razviti sustave za pohranu i baze podataka, implementirati REST API-je, raditi s kontejnerima te uspostaviti kontinuiranu integraciju i kontinuiranu isporuku (CI/CD). Steći će kompetencije za dizajniranje, implementaciju i održavanje skalabilnih, visoko dostupnih i sigurnih cloud aplikacija.
 
 ### Očekivani ishodi učenja na razini kolegija (sa šifrom)
-IU1 - Objasniti osnovne principe računarstva u oblaku i arhitekture sustava.  
-IU2 - Planirati i implementirati pohranu i računske resurse u oblaku.  
-IU3 - Projektirati skalabilne, dostupne i fleksibilne arhitekture.  
-IU4 - Primijeniti sigurnosne prakse i kontrole u arhitekturama.  
-IU5 - Upravljati i nadzirati troškove i performanse u AWS-u.  
-IU6 - Automatizirati izgradnju infrastrukture.  
-IU7 - Primijeniti AWS Well-Architected Framework za procjenu sustava.
+IU1: Objasniti principe razvoja aplikacija u oblaku koristeći AWS servise i razvojne alate.
+IU2: Razviti aplikacije koje koriste servise za pohranu podataka, baze podataka i keširanje na AWS platformi.
+IU3: Dizajnirati i implementirati REST API rješenja korištenjem API Gateway-a i serverless funkcija.
+IU4: Izgraditi event-driven aplikacije primjenom AWS Lambda funkcija, SQS i SNS servisa.
+IU5: Primijeniti kontejnerske tehnologije za razvoj, upravljanje i implementaciju aplikacija u oblaku.
+IU6: Konfigurirati sigurnosne politike i upravljati pristupom te autentikacijom korisnika aplikacija.
+IU7: Postaviti i primijeniti CI/CD procese za automatizaciju izgradnje, testiranja i implementacije aplikacija.
 
 ### Sadržaj kolegija
-Uvod u arhitekturu oblaka: upoznavanje s principima i najboljim praksama AWS arhitekture, AWS Well-Architected Framework, regionalna dostupnost i odabir AWS resursa. Osiguravanje pristupa: principi sigurnosti, IAM, upravljanje korisnicima, grupama i ulogama, sigurnosne politike i dozvole. Implementacija sloja za pohranu: Amazon S3, upravljanje bucket-ima i objektima, sigurnost podataka, versioning, životni ciklus podataka. Dodavanje računskog sloja: Amazon EC2, odabir instanci, Amazon Machine Images (AMI), opcije pohrane, konfiguracija korisničkih podataka, opcije plaćanja. Implementacija sloja baze podataka: Amazon RDS, DynamoDB, opcije baza podataka, sigurnost, backup i restore, replikacija. Kreiranje mrežnog okruženja: dizajn VPC-a, javne i privatne podmreže, pristupne točke, sigurnosne grupe, AWS kontrole pristupa. Povezivanje mreža: VPC peering, Transit Gateway, Site-to-Site VPN, Direct Connect. Sigurnost na razini korisnika, aplikacije i podataka: federacija korisnika, upravljanje više AWS računa, AWS Organizations, enkripcija podataka, AWS KMS. Implementacija nadzora, elastičnosti i visoke dostupnosti: CloudWatch, EventBridge, Auto Scaling, Elastic Load Balancing, Route 53. Automatizacija arhitekture: infrastruktura kao kod, AWS CloudFormation, AWS SAM. Implementacija keširanja: CloudFront, ElastiCache, strategije keširanja. Izgradnja nespregnutih arhitektura, serverless sustava i mikroservisa: Lambda, API Gateway, SQS, SNS, Step Functions, kontejnerske tehnologije. Primjena naučenih koncepata kroz projektni zadatak koji integrira sve aspekte dizajna arhitekture.
+Uvod u razvoj aplikacija u oblaku: upoznavanje s cloud computing modelima, razvojnim ciklusom u cloud okruženju, uloge u cloud computingu i priprema AWS razvojnog okruženja (CLI, SDK, CloudShell, IDE). Razvoj rješenja za pohranu: korištenje Amazon S3, upravljanje bucket-ima i objektima, kontrola pristupa i sigurnost podataka. Osiguravanje pristupa cloud resursima: AWS Identity and Access Management (IAM), autentikacija, autorizacija, model podijeljene odgovornosti. Razvoj fleksibilnih NoSQL rješenja: rad s Amazon DynamoDB, particioniranje podataka, indeksi, operacije nad podacima, throughput, čitanje i pisanje. Razvoj REST API-ja: implementacija API-ja pomoću Amazon API Gateway, integracije, testiranje, optimizacija i sigurnost. Razvoj event-driven serverless rješenja: AWS Lambda funkcije, načini invokacije, upravljanje dozvolama, konfiguracija i monitoring. Uvod u kontejnere i kontejnerske servise: Docker, mikroservisi, AWS ECS, ECR, rad s kontejnerima. Keširanje informacija za skalabilnost: korištenje ElastiCache i CloudFront, strategije keširanja. Razvoj s messaging servisima: implementacija asinkrone komunikacije pomoću Amazon SQS i SNS, integracija u aplikacije. Definiranje workflowa za orkestraciju funkcija: korištenje AWS Step Functions, state machine tipovi, upravljanje kompleksnim tokovima rada. Razvoj sigurnih aplikacija na AWS-u: implementacija sigurnosnih mehanizama, autentikacija s AWS Cognito. Automatizacija implementacije pomoću CI/CD pipeline-a: DevOps principi, korištenje AWS Code servisa, infrastruktura kao kod, implementacija CI/CD procesa. Planiranje i implementacija projekta u oblaku: postavljanje, razvoj i prezentacija cjelovite mikroservisne aplikacije s CI/CD pipeline-om.
 
 ### Oblici izvođenja nastave po temama
 
-| Tjedan | Tema predavanja (P)                      | Tema laboratorijskih vježbi (LV)                                                   | Ishodi učenja                     |
-| ------ | ---------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------- |
-| 1      | Uvod u predmet, arhitekturu oblaka i IAM | Ispitivanje IAM politika, Istraživanje AWS Identity and Access Management          | IU1, IU4, IU7                     |
-| 2      | Sustavi za pohranu podataka u oblaku     | Kreiranje statičke web stranice za kafić s Amazon S3                               | IU2                               |
-| 3      | Računalna infrastruktura u oblaku        | Odabir tipova instanci, Predstavljanje Amazon EFS                                  | IU2, IU5                          |
-| 4      | Baze podataka u oblaku                   | Kreiranje Amazon RDS baze podataka                                                 | IU2                               |
-| 5      | Mrežna infrastruktura u oblaku           | Odabir pravog tipa podmreže, Kreiranje virtualnog privatnog oblaka                 | IU3, IU4                          |
-| 6      | Povezivanje mreža u oblaku               | Kreiranje VPC Peering veze, Ponavljanje i priprema za sigurnosne teme              | IU3, IU4                          |
-| 7      | Sigurnost u oblaku                       | Osiguravanje aplikacija pomoću Amazon Cognito, Enkripcija podataka u mirovanju     | IU4                               |
-| 8      | Nadzor i skalabilnost (1. dio)           | Kreiranje visoko dostupnog okruženja (1. dio)                                      | IU3, IU5                          |
-| 9      | Nadzor i skalabilnost (2. dio)           | Kreiranje visoko dostupnog okruženja (2. dio)                                      | IU3, IU5                          |
-| 10     | Automatizacija infrastrukture            | Automatizacija infrastrukture s AWS CloudFormation                                 | IU6                               |
-| 11     | Keširanje i komunikacija među servisima  | Streaming dinamičkog sadržaja pomoću CloudFront, Izgradnja nespregnutih aplikacija | IU3, IU5                          |
-| 12     | Serverless arhitekture (1. dio)          | Razdvajanje monolitne aplikacije s API Gateway                                     | IU3                               |
-| 13     | Serverless arhitekture (2. dio)          | Implementacija serverless arhitekture na AWS-u, Uvod u projektni zadatak           | IU3                               |
-| 14     |                                          | Rad na projektnom zadatku                                                          | IU1, IU2, IU3, IU4, IU5, IU6, IU7 |
-| 15     |                                          | Finalizacija i prezentacija projektnog zadatka                                     | IU1, IU2, IU3, IU4, IU5, IU6, IU7 |
+
+| Tjedan | Tema predavanja (P)                                               | Tema laboratorijskih vježbi (LV)                                                                                | Tema konstrukcijskih vježbi (KV)              | Ishodi učenja                     |
+| ------ | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------------------------- |
+| 1      | Dobrodošli u AWS Academy Cloud Developing, Uvod u razvoj na AWS-u | AWS dokumentacijska potraga, Istraživanje AWS CloudShell-a i razvojnog okruženja (IDE)                          |                                               | IU1                               |
+| 2      | Razvoj rješenja za pohranu podataka                               | Rad s Amazon S3                                                                                                 |                                               | IU2                               |
+| 3      | Osiguranje pristupa resursima u oblaku                            | Model podijeljene odgovornosti, Konfiguracija međuračunskog pristupa, Kreiranje IAM korisnika i grupa           |                                               | IU6                               |
+| 4      | Razvoj fleksibilnih NoSQL rješenja                                | Izračunavanje RCU i WCU, Rad s Amazon DynamoDB                                                                  |                                               | IU2                               |
+| 5      | Razvoj REST API-ja                                                | Razvoj REST API-ja s Amazon API Gateway                                                                         |                                               | IU3                               |
+| 6      | Razvoj event-driven serverless rješenja                           | Korištenje AWS X-Ray s Lambda funkcijama, Kreiranje Lambda funkcija pomoću AWS SDK za Python                    |                                               | IU4                               |
+| 7      | Uvod u kontejnere i kontejnerske servise                          | Migracija web aplikacije na Docker kontejnere, Izvođenje kontejnera na upravljanom servisu                      |                                               | IU5                               |
+| 8      | Keširanje informacija za skalabilnost                             | Keširanje podataka aplikacije s ElastiCache, Implementacija CloudFront-a za keširanje i sigurnost aplikacije    |                                               | IU2                               |
+| 9      | Razvoj rješenja s messaging servisima                             | Rad s Amazon messaging servisima, Implementacija sustava za razmjenu poruka koristeći Amazon SNS i Amazon SQS   |                                               | IU4                               |
+| 10     | Definiranje workflowa za orkestraciju funkcija                    | Kreiranje jednostavnih kalkulatora pomoću Step Functions, Orkestracija serverless funkcija s AWS Step Functions |                                               | IU4                               |
+| 11     | Razvoj sigurnih aplikacija na AWS-u                               | Implementacija autentikacije aplikacija koristeći Amazon Cognito                                                |                                               | IU6                               |
+| 12     | Automatizacija implementacije pomoću CI/CD pipeline-a             | Automatizacija implementacije aplikacije koristeći CI/CD pipeline                                               | Planiranje projektnog zadatka u oblaku        | IU7                               |
+| 13     |                                                                   |                                                                                                                 | Implementacija projekta u oblaku              | IU1, IU2, IU3, IU4, IU5, IU6, IU7 |
+| 14     |                                                                   |                                                                                                                 | Implementacija projekta u oblaku              | IU1, IU2, IU3, IU4, IU5, IU6, IU7 |
+| 15     |                                                                   |                                                                                                                 | Finalizacija i prezentacija projekta u oblaku | IU1, IU2, IU3, IU4, IU5, IU6, IU7 |
 
 ### Ocjenjivanje i vrednovanje rada studenata tijekom nastave i na ispitu
 
