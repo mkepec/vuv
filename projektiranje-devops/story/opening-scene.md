@@ -1,230 +1,275 @@
-# 🎬 Your First Day at VelocityTech
-## *Friday, 17:45 - Production Deployment Crisis*
+# 🎬 Vaš Prvi Dan u VelocityTech-u
+## *Petak, 17:45 - Kriza Production Deployment-a*
 
 ---
 
-*← [Back to Course Overview](../README.md) | [Next: Meet Your Team →](character-introductions.md)*
+*← [Nazad na Pregled Kursa](../README-hr.md) | [Dalje: Upoznajte Vaš Tim →](character-introductions-hr.md)*
 
 ---
 
-### 📍 **SCENE: VelocityTech Solutions Office - Zagreb**
-### ⏰ **TIME: Friday, May 23rd, 17:45**
-### 🌅 **WEATHER: Beautiful spring evening outside... chaos inside**
+### 📍 **SCENA: VelocityTech Solutions Ured - Zagreb**
+### ⏰ **VRIJEME: Petak, 23. svibnja, 17:45**
+### 🌅 **VRIJEME: Prekrasan proljetni večer vani... kaos unutra**
 
 ---
 
-## ACT I: THE CALM BEFORE THE STORM
+## ČIN I: ZATIŠJE PRIJE OLUJE
 
-**[CAMERA OPENS]** *Modern office space. Laptops scattered on desks. Empty coffee cups. Post-it notes everywhere. Golden hour sunlight streams through windows...*
+**[KAMERA SE OTVARA]** *Moderan uredski prostor. Laptopi razbacani po stolovima. Prazne šalice za kavu. Post-it naljepnice svugdje. Zlatni sat sunčeve svjetlosti struji kroz prozore...*
 
-**[YOU]** *Walking nervously through the office, clutching your internship paperwork*
+**[VI]** *Nervozno hodate kroz ured, stišćući papire za stažiranje*
 
-**MARKO** *(turning from his monitor, friendly but slightly stressed smile)*  
-> "Ah, perfect timing! You must be our new DevOps intern. I'm Marko, your mentor."  
-> *(extends hand)* "Welcome to VelocityTech! I've been here for three months myself."
+**MARKO** *(okrećući se od monitora, prijateljski ali pomalo naglašen osmijeh)*  
+> "Ah, savršeno vrijeme! Ti moraš biti naš novi DevOps praktikant. Ja sam Marko, tvoj mentor."  
+> *(pruža ruku)* "Dobrodošao u VelocityTech! Ja sam ovdje već tri mjeseca."
 
-**[YOU]** *(shaking hands)*  
-> "Thanks! Excited to be here. Three months? So you're relatively new too?"
+**[VI]** *(stišćući ruke)*  
+> "Hvala! Uzbuđen sam što sam ovdje. Tri mjeseca? Dakle i ti si relativno nov?"
 
-**MARKO** *(nodding)*  
-> "Yeah, they brought me in to help modernize their development practices."  
-> *(lowering voice)* "Between you and me, there's a lot of work to do."  
-> *(normal voice)* "But that's why you're here - transformation is a team effort!"
+**MARKO** *(kimajući)*  
+> "Da, doveli su me da pomognem modernizirati njihove razvoje prakse."  
+> *(snižavajući glas)* "Između nas, puno je posla za raditi."  
+> *(normalnim glasom)* "Ali zato si ti ovdje - transformacija je timski napor!"
 
-**[MARKO's face changes. The color drains.]**
+**MARKO** *(šalje poruku, ali mu se lice mijenja kad čita odgovor)*  
+> "Daj da samo provjerim ovu poruku..."
 
-**MARKO** *(muttering)*  
-> "Oh no. Oh no no no. Not today. Not on Friday."
+**[Markovo lice se mijenja. Boja mu odlazi.]**
 
----
-
-## ACT II: WHEN EVERYTHING GOES WRONG
-
-**[CAMERA PANS]** *Sudden movement across the office. Multiple phones ringing. Slack notifications pinging like machine guns.*
-
-**FILIP** *(Operations Engineer, running past with laptop, screen showing red error messages)*  
-> "Marko! Production is down! The deployment is failing!"  
-> *(reading from terminal)* "Database connection timeout... authentication service unreachable..."
-> *(shouting to no one in particular)* "Why do we always deploy on Fridays?!"
-
-**LEGACY LUKA** *(Senior Developer, not looking up from his screen showing stack traces)*  
-> "I told you the new authentication module wasn't ready. Look at this error log!"  
-> *(pointing at screen)* "ClassNotFoundException: AuthTokenValidator... I knew it!"
-> *(typing furiously)* "This is exactly why I don't trust these 'modern' practices."
-
-**ANA** *(QA Engineer, frantically opening multiple browser tabs)*  
-> "Wait, which version did we deploy? I thought I was still testing the payment integration!"  
-> *(voice rising)* "I haven't finished regression testing! How can we be in production?!"
-
-**[PHONE RINGS. Everyone freezes.]**
-
-**MAJA** *(Project Manager, answering her phone with forced calm)*  
-> "Hello, VelocityTech Solutions... Yes, I understand the checkout isn't working..."  
-> *(covering phone, hissing to the team)* "The client is getting angry emails from customers!"
+**MARKO** *(mrmljajući)*  
+> "O ne. O ne ne ne. Ne danas. Ne u petak."
 
 ---
 
-## ACT III: THE CRISIS DEEPENS
+## ČIN II: KAD SVE POŠLO PO ZLU
 
-**[MONTAGE: 18:00 - 19:30]** *The office fills with the aroma of emergency pizza delivery and instant coffee*
+**[KAMERA SE POMIČE]** *Iznenadni pokret preko ureda. Više telefona zvoni. Slack obavještenja zvone kao mitraljezi.*
 
-**FILIP** *(sweating, multiple SSH sessions open, terminal showing database errors)*  
-> "I'm trying to rollback but the database migration already ran!"  
-> *(reading from screen)* "ERROR: Cannot rollback migration_v2.4.1 - foreign key constraints..."
-> "Someone needs to manually fix 50,000 customer records!"
+**FILIP** *(Operations Engineer, trči pokraj s laptopom, zaslon pokazuje crvene error poruke)*  
+> "Marko! Produkcija je pala! Deployment se ruši!"  
+> *(čitajući s terminala)* "Database connection timeout... authentication service unreachable..."
+> *(vikajući nikome posebno)* "Zašto uvijek deployamo petkom?!"
 
-**LUKA** *(defensive, showing his local development environment)*  
-> "My code worked fine in development. Look - localhost runs perfectly!"  
-> *(switching between windows)* "It's probably a server configuration issue."  
-> "These containers just make everything more complicated than simple JARs!"
+**LEGACY LUKA** *(Senior Developer, ne podiže pogled s zaslona koji pokazuje stack trace-ove)*  
+> "Rekao sam ti da novi authentication modul nije spreman. Pogledaj ovaj error log!"  
+> *(pokazujući na zaslon)* "ClassNotFoundException: AuthTokenValidator... Znao sam!"
+> *(bijesno tipka)* "Ovo je točno razlog zašto ne vjerujem ovim 'modernim' praksama."
 
-**ANA** *(overwhelmed, opening a thick Excel spreadsheet)*  
-> "I need at least 3 hours to test the rollback properly..."  
-> "But if we wait that long, we'll lose the weekend!"
+**ANA** *(QA Engineer, paničeno otvara više browser tabova)*  
+> "Čekaj, koju verziju smo deployali? Mislila sam da još testiram payment integraciju!"  
+> *(glas joj se podiže)* "Nisam završila regression testiranje! Kako možemo biti u produkciji?!"
 
-**MAJA** *(juggling three phone calls)*  
-> "Can we push a hotfix in 30 minutes? The client is threatening to cancel the contract!"  
-> "What do you mean 'we don't know what caused it'?!"
+**[TELEFON ZVONI. Svi se smrzavaju.]**
 
-**[MARKO catches your eye. You're standing in the middle of organized chaos, watching your first day unfold.]**
-
-**MARKO** *(walking over, speaking quietly with a mix of frustration and determination)*  
-> "So... this is what I was hired to fix. VelocityTech on a typical Friday deployment."  
-> *(sighs)* "Management brought me in three months ago after the last major outage."  
-> "Want to know the worst part?"
-
-**[YOU]** *(wide-eyed)*  
-> "This... happens regularly?"
-
-**MARKO** *(nodding grimly)*  
-> "Every. Single. Month. Since I started."  
-> "I've been trying to implement changes, but..." *(gestures at the chaos)*  
-> "One person can't transform an entire company culture."  
-> *(looks at you directly)* "That's why I requested an intern. I need help."
+**MAJA** *(Project Manager, odgovara na telefon s prisilnom smirenošću)*  
+> "Zdravo, VelocityTech Solutions... Da, razumijem da checkout ne radi..."  
+> *(prekrivajući telefon, šišteći timu)* "Klijent prima ljutite mailove od kupaca!"
 
 ---
 
-## ACT IV: THE REVELATION
+## ČIN III: KRIZA SE PRODUBLJUJE
 
-**[CAMERA CLOSES IN]** *The office is now dimly lit. Pizza boxes scattered on desks, the smell of cold coffee lingering. It's 21:30.*
+**[MONTAŽA: 18:00 - 19:30]** *Ured se puni aromom hitne pizza dostave i instant kave*
 
-**FILIP** *(exhausted, leaning back in his chair, Slack notifications still pinging)*  
-> "Okay, rollback is complete. Customers can check out again."  
-> *(rubbing his eyes)* "But I have no idea what we're going to tell the client about those 50,000 corrupted user profiles."
+**FILIP** *(znoji se, više SSH sesija otvoreno, terminal pokazuje database greške)*  
+> "Pokušavam rollback ali database migracija je već pokrenuta!"  
+> *(čitajući sa zaslona)* "ERROR: Cannot rollback migration_v2.4.1 - foreign key constraints..."
+> "Netko mora ručno popraviti 50.000 customer zapisa!"
 
-**LUKA** *(packing up his laptop, muttering while closing multiple IDE windows)*  
-> "Well, at least it's fixed. My localhost environment is still clean..."  
-> *(under his breath)* "If they'd just let me deploy the WAR file directly like the old days..."
-> *(louder)* "See you Monday. Assuming nothing else breaks over the weekend..."
+**LUKA** *(obrambeno, pokazuje svoje lokalno development okruženje)*  
+> "Moj kod je radrio savršeno u developmentu. Pogledaj - localhost radi savršeno!"  
+> *(prebacuje između prozora)* "Vjerojatno je problem konfiguracije servera."  
+> "Ovi kontejneri samo kompliciraju stvari više nego obični JAR-ovi!"
 
-**ANA** *(still at her desk, surrounded by test plans)*  
-> "I'll stay and prep test scenarios for Monday's fix."  
-> "Someone has to make sure this doesn't happen again..."
+**ANA** *(preopterećena, otvara debelu Excel tablicu)*  
+> "Trebam barem 3 sata da testiram rollback kako treba..."  
+> "Ali ako čekamo tako dugo, izgubit ćemo vikend!"
 
-**MAJA** *(hanging up her phone, exhausted)*  
-> "Client is... not happy. But they're not canceling. Yet."  
-> "We need to fix our processes. This can't keep happening."
+**MAJA** *(žonglira s tri telefonska poziva)*  
+> "Možemo li gurnuti hotfix za 30 minuta? Klijent prijeti otkazivanjem ugovora!"  
+> "Što znači 'ne znamo što je uzrokovalo problem'?!"
 
-**[EVERYONE has left except MARKO and YOU]**
+**[MARKO hvata vaš pogled. Stojite u sredini organiziranog kaosa, gledate kako se vaš prvi dan odvija.]**
 
-**MARKO** *(turning to face you)*  
-> "So. Still want to do that internship?"
+**MARKO** *(prilazi, govori tiho s mješavinom frustracije i odlučnosti)*  
+> "Dakle... to je ono što sam angažiran popraviti. VelocityTech u tipičnom petkom deployment-u."  
+> *(uzdišuće)* "Management me je doveo prije tri mjeseca nakon zadnje velike pošasti."  
+> "Znaš što je najgore?"
 
-**[YOU]** *(hesitating)*  
-> "Is it always like this?"
+**[VI]** *(širom otvorenih očiju)*  
+> "Ovo se... događa redovito?"
 
-**MARKO** *(small smile)*  
-> "Not after we're done with it."  
-> "That's why you're here. That's why we need DevOps."  
-> *(walking to the whiteboard, picking up a marker)*  
-> "What you just witnessed? That's what happens when good people work in bad systems."
+**MARKO** *(ozbiljno kimajući)*  
+> "Svaki. Jedan. Mjesec. Otkad sam počeo."  
+> "Pokušavao sam implementirati promjene, ali..." *(gesta prema kaosu)*  
+> "Jedna osoba ne može transformirati cijelu kulturu tvrtke."  
+> *(gleda vas direktno)* "Zato sam zatražio praktikanta. Trebam pomoć."
 
 ---
 
-## ACT V: THE MISSION
+## ČIN IV: OTKRIVENJE
 
-**[MARKO draws on the whiteboard]**
+**[KAMERA SE PRIBLIŽAVA]** *Ured je sada slabo osvijetljen. Pizza kutije razbacane po stolovima, miris hladne kave se zadržava. 21:30 je.*
+
+**FILIP** *(iscrpljen, naslanja se u stolicu, Slack obavještenja još uvijek zvone)*  
+> "Okej, rollback je završen. Kupci mogu opet check out-ati."  
+> *(trlja oči)* "Ali nemam pojma što ćemo reći klijentu o onih 50.000 pokvarenih korisničkih profila."
+
+**LUKA** *(pakira laptop, mrmlja dok zatvara više IDE prozora)*  
+> "Pa, barem je popravljeno. Moje localhost okruženje je još uvijek čisto..."  
+> *(pod nosom)* "Da su me samo pustili deployati WAR file direktno kao u stara vremena..."
+> *(glasnije)* "Vidimo se u ponedjeljak. Ako se ništa drugo ne pokvari preko vikenda..."
+
+**ANA** *(još uvijek za stolom, okružena test planovima)*  
+> "Ostat ću i pripremiti test scenarije za ponedjeljkov fix."  
+> "Netko mora osigurati da se ovo ne dogodi opet..."
+
+**MAJA** *(spušta slušalicu, iscrpljena)*  
+> "Klijent je... nezadovoljan. Ali ne otkazuje. Još."  
+> "Moramo popraviti naše procese. Ovo se ne može dalje događati."
+
+**[SVI su otišli osim MARKA i VAS]**
+
+**MARKO** *(okrećući se prema vama)*  
+> "Dakle. Još uvijek želiš raditi taj stažiranje?"
+
+**[VI]** *(oklijevajući)*  
+> "Je li uvijek ovako?"
+
+**MARKO** *(blagi osmijeh)*  
+> "Neće biti nakon što završimo s tim."  
+> "Zato si ovdje. Zato trebamo DevOps."  
+> *(hoda prema bijeloj ploči, uzima marker)*  
+> "Ono što si upravo vidio? To se događa kad dobri ljudi rade u lošim sustavima."
+
+---
+
+## ČIN V: MISIJA
+
+**[MARKO crta na bijeloj ploči]**
 
 ```
-Current State:          Future State:
-- 30 days to production    2 hours
-- Monthly deployments      On-demand  
-- 4 hours to fix issues    5 minutes
-- 30% failure rate        2% failure rate
-- Team stress level: 9/10  Team happiness: 9/10
+Trenutno Stanje:          Buduće Stanje:
+- 30 dana do produkcije     2 sata
+- Mjesečni deployment-i     Na zahtjev  
+- 4 sata za popraviti       5 minuta
+- 30% failure rate         2% failure rate
+- Tim stres nivo: 9/10     Tim sreća: 9/10
 ```
 
-**MARKO** *(tapping the board with renewed energy)*  
-> "I've seen this transformation work at my previous company."  
-> "Filip doesn't have to work weekends."  
-> "Ana doesn't have to manually test everything."  
-> "Luka's code works the same everywhere."  
-> "Maja can promise delivery dates with confidence."  
-> "But I can't do it alone. Cultural change needs champions at every level."
+**MARKO** *(tipkajući po ploči s obnovljenom energijom)*  
+> "Vidio sam ovu transformaciju da radi u mojoj prethodnoj tvrtki."  
+> "Filip ne mora raditi vikende."  
+> "Ana ne mora ručno testirati sve."  
+> "Lukin kod radi isto svugdje."  
+> "Maja može obećati datume dostave s povjerenjem."  
+> "Ali ne mogu to sam. Kulturalna promjena treba čempione na svakoj razini."
 
-**[YOU]** *(looking at the board)*  
-> "That sounds... challenging. How do you change an entire company?"
+**[VI]** *(gledajući u ploču)*  
+> "To zvuči... izazovno. Kako mijenjate cijelu tvrtku?"
 
-**MARKO** *(grinning)*  
-> "One week at a time. One process at a time. One person at a time."  
-> "I bring the experience, you bring the fresh energy and perspective."  
-> *(extends hand)* "Partners in transformation?"
+**MARKO** *(smiješeći se)*  
+> "Tjedan po tjedan. Proces po proces. Osoba po osoba."  
+> "Ja donosim iskustvo, ti donosiš svježu energiju i perspektivu."  
+> *(pruža ruku)* "Partneri u transformaciji?"
 
-**[YOU]** *(shaking hands, determined)*  
-> "Let's transform VelocityTech."
+**[VI]** *(stišćući ruke, odlučno)*  
+> "Ajmo transformirati VelocityTech."
 
-**[CAMERA PULLS BACK]** *The whiteboard glows under the office lights. Two figures shake hands. Outside, Zagreb sparkles in the night.*
+**MARKO** *(hodajući prema kafe aparatu u kutu)*  
+> "Prije nego počnemo planirati naš pristup, želiš kavu? Bit će ovo dugačko putovanje."  
+> *(toči dvije šalice)* "Ovo je prava hrvatska kava - dovoljno jaka da pogoni transformaciju."
+
+**[Uzimate parnu šalicu, udišući bogat arom. Ured sada djeluje tiši, samo vi i Marko pod slabim svjetlima. Polagano srknete...]**
+
+---
+
+## 🌀 **[NEŠTO SE MIJENJA...]**
+
+**[Kava djeluje drugačije. Odjednom, ured oko vas izgleda... više. Kao da gledate kroz nove oči.]**
+
+**[Gotovo možete VIZUALIZIRATI nevidljive probleme koji teku kroz VelocityTech:]**
+
+- 🔄 **Uska grla informacija** - podaci zarobljeni u email lancima i Slack threadovima
+- ⏰ **Tokovi gubljenja vremena** - ručni procesi koji se vrtite u beskonačnim petljama  
+- 😰 **Vektori stresa** - Anina anksioznost zrači s njenog stola, Filipov telefon uvijek zvoni
+- 🔥 **Uzorci neuspjeha** - isti deployment problemi ponavljaju se svaki mjesec
+- 🏝️ **Otoci znanja** - Lukina ekspertiza izolirana, Filipovo plemenske znanje
+- 📊 **Kašnjenje povratnih informacija** - bugovi otkriveni tjednima nakon što su mogli biti uhvaćeni
+
+**[Bijela ploča s metrikama više nisu samo brojevi - možete VIDJETI put transformacije:]**
+
+```
+Trenutna Stvarnost → Buduća Vizija
+Kaos               → Protok
+Reakcija           → Prevencija  
+Silosi             → Suradnja
+Strah              → Povjerenje
+```
+
+**[VI]** *(spuštajući šalicu kave, s novom jasnošću)*  
+> "Sada mogu vidjeti. Ovo nije samo o učenju alata, zar ne?"  
+> "Radi se o... viđenju sustava. Uzoraka. Povezanosti."
+
+**MARKO** *(smiješeći se znalački, naslanjajući se na bijelu ploču)*  
+> "Sada si spreman stvarno početi."  
+> "Dobrodošao na svoje transformacijsko putovanje - ne samo VelocityTech-ovo, već tvoje."  
+> *(kucajući po sljepoočnici)* "DevOps inženjeri ne samo koriste alate. Mi vidimo sustave."
+
+**[Ured se sada osjeća drugačije. Ne samo promatrate priču - VI ste u njoj.]**
+
+**[KAMERA SE POLAKO UDALJAVA]** *Dvije figure kraj bijele ploče, sjaj mogućnosti između njih, Zagrebačka svjetla svjetlucaju iza prozora poput matičnih ploča koje oživljavaju.*
 
 **[FADE TO BLACK]**
 
 ---
 
-## 🎬 **END SCENE**
+## 🎬 **KRAJ SCENE**
 
-### **[TITLE CARD APPEARS]**
+### **[NASLOVNI KARTON SE POJAVLJUJE]**
 
-> ## **15 WEEKS LATER...**
-> *From Chaos to Flow: Your DevOps Transformation Journey*
+> ## **15 TJEDANA KASNIJE...**
+> *Od Kaosa do Protoka: Vaše DevOps Transformacijsko Putovanje*
 > 
-> **Starting Monday: Week 1 - Assessing the Current State**
+> **Počinje u ponedjeljak: Tjedan 1 - Procjena Trenutnog Stanja**
 > 
-> *How do you fix what you witnessed? The journey begins...*
+> *Kako popraviti ono što ste vidjeli? Putovanje počinje...*
 
 ---
 
-## 🎭 **What You Just Experienced**
+## 🎭 **Što Ste Upravo Doživjeli**
 
-This wasn't just a story - **this is what happens in real software companies every day**:
+Ovo nije bila samo priča - **ovo se događa u stvarnim software tvrtkama svaki dan**:
 
-- 🔥 **Friday Deployment Disasters** - Why timing matters in release management
-- 🤷‍♂️ **"Works on My Machine"** - Environment inconsistency problems  
-- 😰 **QA Bottlenecks** - Manual testing scaling issues
-- 📞 **Customer Impact** - When technical debt becomes business debt
-- 🔄 **Reactive Culture** - Always firefighting, never preventing
+- 🔥 **Petak Deployment Katastrofe** - Zašto timing važan u release managementu
+- 🤷‍♂️ **"Radi na Mojoj Mašini"** - Problemi nedosljednosti okruženja  
+- 😰 **QA Uska Grla** - Problemi skaliranja ručnog testiranja
+- 📞 **Utjecaj na Kupce** - Kad tehnički dug postaje poslovni dug
+- 🔄 **Reaktivna Kultura** - Uvijek gašenje požara, nikad sprječavanje
 
-### **Your Mission is Clear:**
-Transform VelocityTech from **chaos to flow** using DevOps principles, practices, and tools.
+### **Vaša Misija je Jasna:**
+Transformirati VelocityTech od **kaosa do protoka** koristeći DevOps principe, praksu i alate.
 
-But first, you need to understand who you're working with...
-
----
-
-## 🚀 **Ready for Your Journey?**
-
-### **Next Steps:**
-1. **[👥 Meet Your Team](character-introductions.md)** - Get to know Luka, Ana, Filip, and Maja
-2. **[📅 Week 1: Current State Assessment](../weeks/week01-velocity-tech-assessment.md)** - Your first assignment
-3. **[📋 Course Overview](../README.md)** - Complete transformation roadmap
-
-### **Reflection Questions:**
-- Which character did you relate to most during the crisis?
-- What would you have done differently in this situation?
-- How do you think DevOps could have prevented this chaos?
+Ali prvo, trebate razumjeti s kime radite...
 
 ---
 
-*← [Back to Course Overview](../README.md) | [Next: Meet Your Team →](character-introductions.md)*
+## 🚀 **Spremni za Vaše Putovanje?**
+
+### **Sljedeći Koraci:**
+1. **[👥 Upoznajte Vaš Tim](character-introductions-hr.md)** - Upoznajte Luku, Anu, Filipa i Maju
+2. **[📅 Tjedan 1: Procjena Trenutnog Stanja](../weeks/week01-velocity-tech-assessment-hr.md)** - Vaš prvi zadatak
+3. **[📋 Pregled Kursa](../README-hr.md)** - Kompletna transformacijska roadmapa
+
+### **Pitanja za Razmišljanje:**
+- S kojim karakterom ste se najviše poistovjetili tijekom krize?
+- Što biste učinili drugačije u ovoj situaciji?
+- Kako mislite da bi DevOps mogao spriječiti ovaj kaos?
 
 ---
 
-> *"Every DevOps transformation starts with a crisis. The question is: will you be the solution?"*
+*← [Nazad na Pregled Kursa](../README-hr.md) | [Dalje: Upoznajte Vaš Tim →](character-introductions-hr.md)*
+
+---
+
+> *"Svaka DevOps transformacija počinje s krizom. Pitanje je: hoćete li vi biti rješenje?"*
