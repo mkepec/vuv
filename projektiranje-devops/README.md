@@ -14,7 +14,7 @@
 ## Opis kolegija
 
 ### Ciljevi kolegija
-Studenti će steći praktična znanja i vještine za implementaciju DevOps kulture i praksi u modernim softverskim projektima. Kroz kolegij, studenti će naučiti kako transformirati tradicionalne IT procese primjenom DevOps metodologija, implementirati automatizaciju kroz kontinuiranu integraciju i kontinuiranu isporuku (CI/CD), upravljati infrastrukturom kao kodom, kontejnerizirati aplikacije te uspostaviti sustave za praćenje i nadzor. Studenti će razviti kompetencije za projektiranje i implementaciju potpunih DevOps pipeline-ova, transformaciju organizacijske kulture te mjerenje i poboljšanje performansi softverskog razvoja i operacija.
+Studenti će steći praktična znanja i vještine za implementaciju DevOps kulture i praksi u modernim softverskim projektima. Kroz kolegij, studenti će naučiti kako transformirati tradicionalne IT procese primjenom DevOps metodologija, implementirati automatizaciju kroz kontinuiranu integraciju i kontinuiranu isporuku (CI/CD), upravljati infrastrukturom kao kodom, kontejnerizirati aplikacije te uspostaviti sustave za praćenje i nadzor. Studenti će također ovladati sigurnosnim praksama u DevOps procesima, agilnim pristupima u upravljanju projektima te metodama rješavanja problema u produkcijskim okruženjima. Studenti će razviti kompetencije za projektiranje i implementaciju potpunih DevOps pipeline-ova, transformaciju organizacijske kulture te mjerenje i poboljšanje performansi softverskog razvoja i operacija.
 
 ### Očekivani ishodi učenja na razini kolegija (sa šifrom)
 IU1: Objasniti DevOps principe, kulturu i metodologije te njihovu primjenu u transformaciji tradicionalnih IT praksi.
