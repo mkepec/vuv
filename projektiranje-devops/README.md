@@ -18,12 +18,19 @@ Studenti će steći praktična znanja i vještine za implementaciju DevOps kultu
 
 ### Očekivani ishodi učenja na razini kolegija (sa šifrom)
 IU1: Objasniti DevOps principe, kulturu i metodologije te njihovu primjenu u transformaciji tradicionalnih IT praksi.
+
 IU2: Implementirati sustave za upravljanje verzijama koda i uspostaviti procese kontinuirane integracije s automatiziranim testiranjem.
+
 IU3: Dizajnirati i implementirati containerske arhitekture te upravljati aplikacijama pomoću orkestracije kontejnera.
+
 IU4: Primijeniti infrastrukturu kao kod (IaC) za automatizaciju provisioniranja i konfiguracije IT resursa.
+
 IU5: Izgraditi potpune CI/CD pipeline-ove s integriranim sigurnosnim praksama i automatiziranim deployment strategijama.
+
 IU6: Uspostaviti sustave za praćenje, nadzor i centralizirano logiranje aplikacija i infrastrukture.
+
 IU7: Implementirati sigurnosne prakse u DevOps procesima (DevSecOps) i upravljati sustavima za upravljanje tajnim podacima.
+
 
 ### Sadržaj kolegija
 Uvod u DevOps kulturu i principe: razumijevanje DevOps filozofije i metodologija, kulturna transformacija organizacije, mjerenje uspjeha transformacije. Upravljanje verzijama i suradnja u timu: napredne tehnike rada s izvornim kodom, strategije grananja, procesi pregleda koda. Automatizacija testiranja i osiguravanje kvalitete: principi test-driven razvoja, automatizacija različitih razina testiranja, rana detekcija grešaka. Kontinuirana integracija i automatizacija izgradnje: workflow automatizacija, upravljanje artefaktima, automatizacija provjera kvalitete i sigurnosti. Kontejnerizacija i mikroservisi: kontejnerske tehnologije, sigurnost kontejnera, najbolje prakse za kontejnerske aplikacije. Orkestracija kontejnera: osnove Kubernetes platforme, upravljanje aplikacijama, lokalni razvoj s orkestratorima. Infrastruktura kao kod: principi i alati za automatizaciju infrastrukture, upravljanje stanjem, modularni pristup. Upravljanje konfiguracije: automatizacija konfiguracije poslužitelja, upravljanje tajnim podacima, reproducibilne konfiguracije. Sigurni CI/CD procesi: integracija sigurnosnih praksi, strategije implementacije u više okruženja, napredne deployment tehnike. Mrežavanje i otkrivanje servisa: konfiguracija mrežnih komponenti, mrežne sigurnosne politike, komunikacija između servisa. Praćenje i metrije: implementacija sustava za praćenje, definiranje ključnih pokazatelja performansi, strategije upozoravanja. Centralizirano zapisivanje događaja: sustavi za agregaciju logova, strukturirano zapisivanje, korelacija događaja i rješavanje problema. Agilni način rada u DevOps okruženju: principi agilnog razvoja, sprint planiranje, upravljanje backlogom, timska suradnja u DevOps projektima. Integrativni projekt: planiranje, implementacija i prezentacija cjelovite DevOps transformacije.
