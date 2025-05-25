@@ -19,16 +19,17 @@
 
 **[YOU]** *Walking nervously through the office, clutching your internship paperwork*
 
-**MARKO** *(turning from his monitor, friendly smile)*  
+**MARKO** *(turning from his monitor, friendly but slightly stressed smile)*  
 > "Ah, perfect timing! You must be our new DevOps intern. I'm Marko, your mentor."  
-> *(extends hand)* "Welcome to VelocityTech Solutions!"
+> *(extends hand)* "Welcome to VelocityTech! I've been here for three months myself."
 
 **[YOU]** *(shaking hands)*  
-> "Thanks! Excited to be here. So... what's the plan for my first day?"
+> "Thanks! Excited to be here. Three months? So you're relatively new too?"
 
-**MARKO** *(chuckling)*  
-> "Well, I was going to give you the grand tour, maybe grab coffee, talk about our roadmap..."  
-> *(phone buzzes)* "But let me just check this message first..."
+**MARKO** *(nodding)*  
+> "Yeah, they brought me in to help modernize their development practices."  
+> *(lowering voice)* "Between you and me, there's a lot of work to do."  
+> *(normal voice)* "But that's why you're here - transformation is a team effort!"
 
 **[MARKO's face changes. The color drains.]**
 
@@ -87,18 +88,19 @@
 
 **[MARKO catches your eye. You're standing in the middle of organized chaos, watching your first day unfold.]**
 
-**MARKO** *(walking over, speaking quietly)*  
-> "So... this is VelocityTech on a typical Friday deployment."  
-> *(sighs)* "Want to know the worst part?"
+**MARKO** *(walking over, speaking quietly with a mix of frustration and determination)*  
+> "So... this is what I was hired to fix. VelocityTech on a typical Friday deployment."  
+> *(sighs)* "Management brought me in three months ago after the last major outage."  
+> "Want to know the worst part?"
 
 **[YOU]** *(wide-eyed)*  
 > "This... happens regularly?"
 
 **MARKO** *(nodding grimly)*  
-> "Every. Single. Month."  
-> "We spend weekends fixing what should have been caught earlier."  
-> "Our customers get frustrated. Our team gets burned out."  
-> "And Monday morning, we all pretend this is 'just how software development works.'"
+> "Every. Single. Month. Since I started."  
+> "I've been trying to implement changes, but..." *(gestures at the chaos)*  
+> "One person can't transform an entire company culture."  
+> *(looks at you directly)* "That's why I requested an intern. I need help."
 
 ---
 
@@ -152,23 +154,24 @@ Current State:          Future State:
 - Team stress level: 9/10  Team happiness: 9/10
 ```
 
-**MARKO** *(tapping the board)*  
+**MARKO** *(tapping the board with renewed energy)*  
+> "I've seen this transformation work at my previous company."  
 > "Filip doesn't have to work weekends."  
 > "Ana doesn't have to manually test everything."  
 > "Luka's code works the same everywhere."  
 > "Maja can promise delivery dates with confidence."  
-> "And our customers? They get features fast and reliably."
+> "But I can't do it alone. Cultural change needs champions at every level."
 
 **[YOU]** *(looking at the board)*  
-> "That sounds... impossible. How do you change an entire company?"
+> "That sounds... challenging. How do you change an entire company?"
 
 **MARKO** *(grinning)*  
 > "One week at a time. One process at a time. One person at a time."  
-> "And it starts Monday morning, with you."  
-> *(extends hand)* "Ready to transform VelocityTech?"
+> "I bring the experience, you bring the fresh energy and perspective."  
+> *(extends hand)* "Partners in transformation?"
 
 **[YOU]** *(shaking hands, determined)*  
-> "Let's do it."
+> "Let's transform VelocityTech."
 
 **[CAMERA PULLS BACK]** *The whiteboard glows under the office lights. Two figures shake hands. Outside, Zagreb sparkles in the night.*
 
