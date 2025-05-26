@@ -4,6 +4,9 @@
 
 Dobrodošli na najneobičniji DevOps predmet koji ćete ikad pohađati. Ovdje nećete učiti alate u izolaciji - **živjet ćete transformaciju kroz priču stvarne tvrtke**.
 
+## 🎬 [▶️ Teaser: Tvoj prvi dan u VelocityTech](story/opening-scene.md)
+*Petak, 17:45. Production deployment. Sve pošlo po zlu. Dobrodošli u realnost software development-a...*
+
 ---
 
 ## 🎭 Vaša Uloga: DevOps Intern u VelocityTech Solutions
