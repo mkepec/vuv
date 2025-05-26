@@ -3,7 +3,7 @@
 
 ---
 
-*← [Nazad na Pregled predmeta](../README.md) | [Dalje: Upoznajte Vaš Tim →](character-introductions-hr.md)*
+*← [Nazad na Pregled predmeta](../README.md) | [Dalje: Upoznajte Vaš Tim →](character_introductions_hr.md)*
 
 ---
 
