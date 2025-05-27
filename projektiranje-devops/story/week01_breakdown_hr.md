@@ -1,366 +1,451 @@
-# 📊 Tjedan 1: Procjena Trenutnog Stanja VelocityTech-a
-## *"Dobrodošli u Stvarni Svijet - Dokumentiranje Kaosa"*
+# Week 1: Welcome to VelocityTech - Current State Assessment 🏗️
+**VelocityTech Transformation Week 1**
+
+**Story Context:** Your first day at VelocityTech Solutions - witness the Friday evening deployment disaster and begin documenting the chaos  
+**Focus:** Establishing baseline metrics and understanding current pain points  
+**Characters in Focus:** Meeting all team members and their daily frustrations
 
 ---
 
-*← [Nazad na Uvodnu Scenu](../story/opening-scene-hr.md) | [Dalje: Tjedan 2 Kriza Version Control-a →](week02-version-control-crisis-hr.md)*
+## 🔥 The Weekly Crisis: "Friday Evening Production Meltdown"
+**Setting:** VelocityTech office, Friday 4:30 PM. Most people planning weekend escapes.  
+**The Problem:** Critical customer-facing bug discovered just as everyone's leaving
+
+**Scene:** [VelocityTech main development floor. Coffee cups abandoned, coats half-on.]
+
+**MAJA** *(frantically refreshing monitoring dashboard)*  
+> "Customer portal is down! We've got 500 users locked out of their accounts!"  
+> "The client is calling every 10 minutes. They want answers NOW."
+
+**FILIP** *(already pulling up server logs)*  
+> "Here we go again... Let me guess, it's the database connection timeout?"  
+> *(sighs heavily)* "Why does this always happen on Friday afternoons?"
+
+**LUKA** *(defensively, still in his coat)*  
+> "My code worked fine in development! It passed all the manual tests yesterday."  
+> "Maybe it's an environment issue? The servers are different..."
+
+**ANA** *(looking overwhelmed)*  
+> "I tested the login flow, but I can't test every possible user scenario."  
+> "There are thousands of edge cases! I'm just one person!"
+
+**MARKO** *(your mentor, calmly assessing the situation)*  
+> "Right. Filip, what's our usual recovery time for issues like this?"  
+> "Ana, how long does it typically take to verify a fix?"
+
+**FILIP** *(checking his phone for previous incidents)*  
+> "Last three similar issues... 2 hours, 4 hours, and 6 hours to resolve."  
+> "Plus another hour to verify it's actually fixed."
+
+**ANA**  
+> "If I have to manually test everything again, that's at least 3 hours of scenarios."  
+> "Assuming I don't find more bugs..."
+
+**MAJA** *(calculating in her head)*  
+> "So we're looking at potentially 7+ hours? It's Friday evening!"  
+> *(to you)* "You're our new intern, right? What do you see that we're missing?"
+
+**[Everyone turns to you - the fresh perspective they hope will somehow make sense of this recurring nightmare.]**
+
+**MARKO** *(to you quietly)*  
+> "This happens every 2-3 weeks. There's a pattern here, but they can't see it."  
+> "What would you measure to understand why this keeps happening?"
+
+**[Your systems thinking kicks in. This isn't just bad luck - this is a symptom of deeper problems.]**
 
 ---
 
-> *"Ne možete poboljšati ono što ne mjerite. A ne možete mjeriti ono što ne vidite. Ovaj tjedan, činio nevidljivo vidljivim."* - Marko, vaš mentor
+## 🎯 What We'll Master This Week
+**By the end of this week, you'll be able to:**
+1. **Measure current state using DORA metrics** - Calculate lead time, deployment frequency, MTTR, and change failure rate for any development team
+2. **Create value stream maps that reveal hidden waste** - Identify bottlenecks, waiting time, and handoff problems in software delivery
+3. **Establish measurement systems** - Set up tracking that enables data-driven transformation decisions
 
-Nakon što ste doživjeli petkovnu production krizu i vaše buđenje potaknuto kavom, spremni ste za svoj prvi pravi zadatak. Ali prije nego što možete transformirati VelocityTech, trebate razumjeti **točno što transformirate**.
-
----
-
-## 🎯 **Ciljevi Učenja za Tjedan 1**
-
-Do kraja ovog tjedna, moći ćete:
-- **IU1** - Objasniti osnovne DevOps principe i koncepte kulturalne transformacije
-- **Mjeriti trenutno stanje** koristeći ključne DevOps metrike (DORA metrike)
-- **Mapirati value stream-ove** za identifikaciju uskih grla i rasipanja
-- **Dokumentirati problematične točke** s kvantificiranim utjecajem
-- **Uspostaviti baseline** za praćenje transformacije
+**Real-world Connection:** These assessment skills are exactly what DevOps consultants use when entering Croatian companies like Infobip, Rimac, or Span. Measuring current state is always the first step in any transformation project.
 
 ---
 
-## 🎭 **Kontekst Priče za Ovaj Tjedan**
+## 📚 The Knowledge Foundation
 
-### **Realnost Ponedjeljak Ujutro**
-Ponedjeljak je, 8:30. Stižete u VelocityTech sa svojom laptop-om, bilježnicom i novostečenom perspektivom sistemskog razmišljanja. Vikend je omogućio svima da se smirite, ali problemi od petka su još uvijek neriješeni.
+### DevOps Principles and the CALMS Framework
+**The Problem it Solves:** Teams working in silos, manual processes causing delays and errors  
+**How it Works:** CALMS provides a framework for cultural and technical transformation:
+- **C**ulture - Breaking down silos between development and operations
+- **A**utomation - Eliminating repetitive manual tasks
+- **L**ean - Focusing on value, eliminating waste
+- **M**easurement - Making decisions based on data, not assumptions
+- **S**haring - Knowledge sharing and collective responsibility
 
-**Vaša misija ovaj tjedan:** Postanite VelocityTech-ov dijagnostički specijalista. Dokumentirajte sve, izmjerite sve, razumijte sve.
+**Real-world Example:** Netflix transformed from DVD shipping to streaming by applying these principles  
+**VelocityTech Connection:** Friday's crisis shows lack of shared responsibility - developers blame environment, ops blame code, QA overwhelmed by manual work
 
----
+### DORA Metrics - The Four Keys to DevOps Performance
+**The Problem it Solves:** No objective way to measure development team performance and improvement  
+**How it Works:** Four metrics that correlate with organizational performance:
 
-## 📅 **Tjedni Raspored**
-
-### **🎪 Scenarij Problematične Točke (15 minuta)**
-#### *"Post-Mortem Ponedjeljak Ujutro"*
-
-**[SCENA: VelocityTech konferencijska sala, 9:00. Fluorescentna svjetla zuje iznad. Mrlje od kave na stolu.]**
-
-**MAJA** *(čitajući iz svojih bilježaka)*  
-> "Dakle, petkova incident. Tri sata downtime-a, približno 50.000 pogođenih customer zapisa..."  
-> "Klijent zahtijeva detaljan post-mortem do kraja tjedna."
-
-**FILIP** *(trljajući umorne oči)*  
-> "Proveo sam vikend ručno popravijući pokvarene user profile. Opet."  
-> "Trebamo shvatiti zašto se ovo stalno događa."
-
-**LUKA** *(obrambeno)*  
-> "Moj kod radi dobro. Vjerojatno je problem s okruženjem."  
-> "Možda kad bismo imali propisna testing okruženja..."
-
-**ANA** *(preopterećena)*  
-> "Ne mogu testirati sve. Previše je edge case-ova."  
-> "A trebam validirati fix do srijede?"
-
-**MARKO** *(gledajući vas)*  
-> "Ovo je točno razlog zašto trebamo izmjeriti naše trenutno stanje."  
-> "Ne možete popraviti ono što ne vidite."
-
-**[Svi se okreću prema vama - novi praktikant s "svježom perspektivom"]**
-
-**MAJA**  
-> "Točno, ti si naš novi DevOps praktikant. Možeš li nam pomoći razumjeti što je pošlo po zlu?"
-
-**[Ovo je vaš trenutak. Što vidite što oni ne vide?]**
-
----
-
-### **📚 Sadržaj Predavanja (45 minuta)**
-
-#### **1. Osnove DevOps-a i Kulturalna Transformacija (15 min)**
-
-**Što je DevOps Stvarno?**
-- **Nisu samo alati** - to je kulturalni pokret
-- **CALMS Framework:**
-  - **C**ulture - Suradnja umjesto silosa
-  - **A**utomation - Eliminiraj ručni rad
-  - **L**ean - Fokus na vrijednost, eliminiraj rasipanje
-  - **M**easurement - Odluke temeljene na podacima
-  - **S**haring - Dijeljenje znanja i odgovornosti
-
-**Tri Puta DevOps-a:**
-1. **Sistemsko Razmišljanje** - Optimiziraj cjelinu, ne dijelove
-2. **Pojačaj Feedback Petlje** - Brza detekcija i oporavak
-3. **Kultura Eksperimentiranja** - Učenje iz grešaka
-
-#### **2. DORA Metrike - Četiri Ključa (15 min)**
-
-**Lead Time za Promjene**
-- Vrijeme od commit-a do produkcije
-- VelocityTech trenutno: ~30 dana
-- World-class target: <1 sat
+**Lead Time for Changes**
+- Time from code commit to production deployment
+- VelocityTech current: ~30 days (based on today's observation)
+- World-class target: Less than 1 hour
 
 **Deployment Frequency**
-- Koliko često release-amo u produkciju
-- VelocityTech trenutno: Mjesečno (s boli)
-- World-class target: Na zahtjev
+- How often we release to production
+- VelocityTech current: Monthly releases (with pain)
+- World-class target: On-demand deployments
 
 **Mean Time to Recovery (MTTR)**
-- Koliko brzo popravljamo production probleme
-- VelocityTech trenutno: 3-4 sata
-- World-class target: <1 sat
+- How quickly we recover from production failures
+- VelocityTech current: 3-4 hours (today's crisis proves this)
+- World-class target: Less than 1 hour
 
 **Change Failure Rate**
-- Postotak deployment-a koji uzrokuju probleme
-- VelocityTech trenutno: ~30%
+- Percentage of deployments causing production problems
+- VelocityTech current: ~30% (estimate from team discussion)
 - World-class target: 0-15%
 
-#### **3. Osnove Value Stream Mapping-a (15 min)**
+**Real-world Example:** Google, Amazon, and Microsoft use these metrics to drive improvements  
+**VelocityTech Connection:** Today's incident is a perfect example of high MTTR and likely high change failure rate
 
-**Što je Value Stream Mapping?**
-- Vizualna reprezentacija toka rada
-- Identificira rasipanje i uska grla
-- Pokazuje i trenutno i buduće stanje
+### Value Stream Mapping Fundamentals
+**The Problem it Solves:** Hidden waste and bottlenecks in development processes  
+**How it Works:** Visual representation showing how work flows from idea to customer value
 
-**Tipovi Rada:**
-- **Dodavanje vrijednosti** - Kupac plaća za ovo
-- **Ne dodaje vrijednost ali potrebno** - Compliance, sigurnost
-- **Čisto Rasipanje** - Čekanje, prerađivanje, predaja
+**Types of Work:**
+- **Value-adding** - Customer pays for this (writing features)
+- **Non-value-adding but necessary** - Compliance, security reviews
+- **Pure waste** - Waiting, rework, handoffs without purpose
 
-**Uobičajeni Tipovi Rasipanja:**
-- **Čekanje** - Kod čeka odobrenje/testiranje
-- **Dodatna Obrada** - Ručni koraci koji bi mogli biti automatizirani
-- **Defekti** - Bug-ovi pronađeni kasno u procesu
-- **Transport** - Premještanje koda između okruženja
+**Common Waste Patterns:**
+- **Waiting** - Code waits for approval, testing, deployment
+- **Extra processing** - Manual steps that could be automated
+- **Defects** - Bugs found late in the process
+- **Transport** - Moving code between environments
+
+**Real-world Example:** Toyota's manufacturing principles applied to software development  
+**VelocityTech Connection:** Friday's issue shows waste - manual testing delays, environment inconsistencies, long feedback loops
+
+**Key Takeaways:**
+- Measurement reveals problems that feelings hide
+- DORA metrics provide objective improvement targets
+- Value stream mapping shows where time actually goes
+- Current state assessment must be honest and comprehensive
 
 ---
 
-### **🧪 Laboratorijska Vježba: "Transformacijska Dijagnostika" (3 sata)**
+## 🛠️ Lab Mission: "The VelocityTech Diagnostic"
+**Scenario:** You're the new intern tasked with understanding why VelocityTech has recurring production crises  
+**Your Mission:** Establish baseline metrics and create a value stream map showing current reality  
+**Success Criteria:** Quantified current state with identified improvement opportunities
 
-#### **Dio 1: Baseline Procjena Metrika (45 min)**
+### Phase 1: DORA Metrics Baseline (45 minutes)
+**Objective:** Establish measurable baseline for VelocityTech's current performance
 
-**Vaš Zadatak:** Uspostaviti metrike trenutnog stanja za VelocityTech
-
-**Potrebni Alati:**
-- Excel/Google Sheets za prikupljanje podataka
-- Pristup VelocityTech-ovom Jira/project management alatu
-- Pristup Git repozitoriju
-- Predlošci za intervjue
-
-**Postupak Korak-po-Korak:**
-
-1. **Analiza Lead Time-a**
-   ```
-   Pronađi zadnjih 10 završenih feature-a:
-   - Datum zahtjeva za feature
-   - Datum početka developmenta  
-   - Datum završetka koda
-   - Datum release-a u produkciju
-   Izračunaj: Zahtjev → Produkcija vrijeme
-   ```
-
-2. **Praćenje Deployment Frequency**
-   ```
-   Pregledaj zadnjih 6 mjeseci:
-   - Prebroji production deployment-e
-   - Zabilježi deployment uspjeh/neuspjeh
-   - Dokumentiraj deployment trajanje
-   ```
-
-3. **MTTR Kalkulacija**
-   ```
-   Pronađi zadnjih 10 production incidenata:
-   - Vrijeme otkrivanja problema
-   - Vrijeme početka rješavanja
-   - Vrijeme rješavanja problema
-   Izračunaj prosjek vremena oporavka
-   ```
-
-4. **Change Failure Rate**
-   ```
-   Zadnjih 20 deployment-a:
-   - Uspješni deployment-i
-   - Neuspješni/rolled back deployment-i
-   - Hotfix-ovi u 24 sata
-   Izračunaj postotak neuspjeha
-   ```
-
-#### **Dio 2: Value Stream Mapping Radionica (90 min)**
-
-**Vaša Misija:** Mapiraj VelocityTech-ov trenutni development proces
-
-**Proces za Mapiranje:** Od zahtjeva za feature do production deployment-a
-
-**Intervjui sa Stakeholder-ima:**
-- **5 min s vsakim karakterom** (Luka, Ana, Filip, Maja)
-- Pitaj: "Prošetaj me kroz svoj tipični radni proces"
-- Dokumentiraj: Korake, vremena čekanja, problematične točke
-
-**Predložak za Mapiranje:**
-```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   Zahtjev   │────│ Development │────│  Testiranje │
-│    za       │    │             │    │             │
-│  Feature    │    │             │    │             │
-└─────────────┘    └─────────────┘    └─────────────┘
-  Čekanje: 3 dana    Proces: 10 dana   Čekanje: 2 dana
+**Steps:**
+1. **Lead Time Analysis**
+   ```bash
+   # Access VelocityTech's Jira/project tracking system
+   # Find last 10 completed features
+   # Record: Request date → Code complete → Production date
+   # Calculate average lead time
    
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│ Code Review │────│ Deployment  │────│ Production  │
-│             │    │   Priprema  │    │  Monitoring │
-└─────────────┘    └─────────────┘    └─────────────┘
-  Čekanje: 2 dana    Proces: 4 dana   Čekanje: ???
+   echo "Feature 1: 35 days from request to production"
+   echo "Feature 2: 28 days from request to production"
+   echo "Average lead time: 31.5 days"
+   ```
+   - Expected output: Average lead time of 25-35 days
+   - Troubleshooting: If data is incomplete, interview team members for estimates
+
+2. **Deployment Frequency Tracking**
+   ```bash
+   # Review Git history for production tags
+   git log --oneline --grep="PROD\|RELEASE\|DEPLOY" --since="6 months ago"
+   
+   # Count production deployments per month
+   # Document deployment success/failure
+   ```
+   - Expected output: 1-2 deployments per month
+   - Troubleshooting: Check multiple branches if using Git Flow
+
+3. **MTTR Calculation**
+   ```bash
+   # Review incident tracking system
+   # Document last 10 production incidents:
+   # - Detection time
+   # - Resolution start time  
+   # - Resolution completion time
+   
+   echo "Incident 1: 3.5 hours MTTR"
+   echo "Incident 2: 4.2 hours MTTR"
+   echo "Average MTTR: 3.8 hours"
+   ```
+   - Expected output: 2-6 hours average MTTR
+   - Troubleshooting: If no formal incident tracking, use email/Slack history
+
+**Checkpoint:** You should have baseline numbers for all four DORA metrics
+
+### Phase 2: Value Stream Mapping Workshop (90 minutes)
+**Objective:** Map the complete flow from feature request to production deployment
+
+**Steps:**
+1. **Stakeholder Interviews**
+   ```
+   Interview each character (5 minutes each):
+   
+   Luka (Developer):
+   "Walk me through what happens when you get a new feature request"
+   Document: Steps, waiting times, handoffs
+   
+   Ana (QA):
+   "How does code reach you for testing?"
+   Document: Testing process, approval gates, bottlenecks
+   
+   Filip (Operations):
+   "What's involved in deploying to production?"
+   Document: Deployment steps, environment preparation, monitoring
+   
+   Maja (Manager):
+   "How do you track progress and communicate with clients?"
+   Document: Reporting processes, status updates, approval chains
+   ```
+
+2. **Process Flow Mapping**
+   ```
+   Current State Map:
+   
+   [Feature Request] → [Requirements Analysis] → [Development] → [Code Review]
+         ↓ 3 days          ↓ 2 days           ↓ 10 days     ↓ 2 days
+   
+   [QA Testing] → [UAT] → [Deployment Prep] → [Production Deploy]
+     ↓ 5 days    ↓ 3 days    ↓ 4 days          ↓ 2 days
+   
+   Total: ~31 days (only 12 days adding value)
+   ```
+
+3. **Waste Identification**
+   ```markdown
+   Red (Pure Waste):
+   - 3-day wait for requirement clarification
+   - 2-day wait for code review availability
+   - 4-day environment preparation delays
+   
+   Yellow (Necessary but Non-Value):
+   - Manual UAT process (security requirement)
+   - Compliance documentation reviews
+   
+   Green (Value-Adding):
+   - Actual feature development
+   - Bug fixing and quality improvements
+   ```
+
+**Checkpoint:** Complete value stream map showing 60%+ waste/waiting time
+
+### Phase 3: Pain Point Documentation (45 minutes)
+**Objective:** Document and quantify the most impactful problems
+
+**Steps:**
+1. **Technical Pain Points**
+   ```markdown
+   ## Pain Point: Environment Inconsistencies
+   **Impact:** High
+   **Frequency:** Weekly
+   **Affects:** Luka (development), Ana (testing), Filip (operations)
+   **Current Cost:** 8 hours/week troubleshooting
+   **Root Cause:** Manual environment setup, no configuration management
+   **Potential Solution:** Infrastructure as Code, containerization
+   ```
+
+2. **Process Pain Points**
+   ```markdown
+   ## Pain Point: Manual Testing Bottleneck
+   **Impact:** High
+   **Frequency:** Every release
+   **Affects:** Ana (overwhelmed), entire team (delays)
+   **Current Cost:** 5 days per release cycle
+   **Root Cause:** No test automation, single point of failure
+   **Potential Solution:** Automated testing pipeline
+   ```
+
+3. **Cultural Pain Points**
+   ```markdown
+   ## Pain Point: Blame Culture During Incidents
+   **Impact:** Medium
+   **Frequency:** Every incident
+   **Affects:** Team morale and collaboration
+   **Current Cost:** Reduced knowledge sharing, defensive behavior
+   **Root Cause:** Lack of blameless post-mortems
+   **Potential Solution:** Incident review process focused on systems improvement
+   ```
+
+### Validation & Testing
+**How to verify everything works:**
+1. **Metrics Validation** - `Cross-check numbers with team members for accuracy`
+2. **Process Validation** - `Walk through mapped process with each stakeholder`
+3. **Pain Point Validation** - `Confirm impact assessments with affected team members`
+
+**Expected Results:**
+- **Lead Time:** 25-35 days measured and documented
+- **Deployment Frequency:** 1-2 per month confirmed
+- **MTTR:** 3-6 hours average with incident examples
+- **Change Failure Rate:** 20-40% estimated with supporting data
+- **Value Stream Map:** Shows >50% waste/waiting time
+- **Pain Points:** 8-12 documented issues with quantified impact
+
+---
+
+## 🔧 New Tools in Your Arsenal
+### Excel/Google Sheets for Metrics Tracking
+- **Purpose:** Collect and analyze baseline performance data
+- **Key Functions:**
+  - `=AVERAGE(range)` - Calculate mean values for metrics
+  - `=COUNTIF(range,criteria)` - Count deployment successes/failures
+- **Pro Tips:** Use pivot tables for incident analysis by type
+- **Common Pitfalls:** Ensure consistent date formats when calculating lead times
+
+### Value Stream Mapping Templates
+- **Purpose:** Visualize current state processes and identify waste
+- **Key Components:**
+  - Process boxes (activities)
+  - Data boxes (time, quality metrics)
+  - Flow arrows (handoffs)
+- **Pro Tips:** Use different colors for value-add vs waste activities
+- **Common Pitfalls:** Don't map ideal process - map what actually happens
+
+### Interview Techniques for Process Discovery
+- **Purpose:** Gather accurate information about current state
+- **Key Questions:**
+  - "Walk me through your typical..."
+  - "What happens when..."
+  - "How long does X usually take?"
+- **Pro Tips:** Ask for specific recent examples, not generalizations
+- **Common Pitfalls:** Don't lead witnesses - let them describe their reality
+
+---
+
+## 🔧 Common Issues & Solutions
+
+### Issue #1: "Team members give inconsistent time estimates"
+**Symptoms:** Different people report different lead times for same process
+**Cause:** People estimate ideal case vs reality, or measure different things
+**Solution:** 
+```bash
+# Use specific recent examples
+"Tell me about the last feature you completed - what were the actual dates?"
+# Cross-reference with project tracking tools
+# Document both best-case and typical scenarios
 ```
+**Prevention:** Always ask for specific examples with dates
 
-**Identifikacija Rasipanja:**
-- Označi **crveno** za čekanje/kašnjenja
-- Označi **žuto** za potreban rad koji ne dodaje vrijednost  
-- Označi **zeleno** za rad koji dodaje vrijednost
+### Issue #2: "Cannot access historical deployment data"
+**Symptoms:** No clear record of when things were deployed to production
+**Cause:** Informal deployment process, no tagging strategy
+**Solution:**
+```bash
+# Check multiple sources:
+git log --grep="prod\|release\|deploy" --since="6.months.ago"
+# Email searches for deployment announcements
+# Jira/ticket system for release records
+# Interview team members for major release dates
+```
+**Prevention:** Establish deployment tracking from now forward
 
-#### **Dio 3: Dokumentiranje Problematičnih Točaka (45 min)**
-
-**Vaš Zadatak:** Stvori sveobuhvatan popis problematičnih točaka
-
-**Kategorije za Dokumentiranje:**
-
-1. **Tehničke Problematične Točke**
-   - Nedosljednosti okruženja
-   - Ručni deployment koraci
-   - Uska grla testiranja
-   - Praznine u monitoring-u
-
-2. **Procesne Problematične Točke**
-   - Kašnjenja odobrenja
-   - Praznine u komunikaciji
-   - Silosi znanja
-   - Problemi dokumentacije
-
-3. **Kulturalne Problematične Točke**
-   - Kultura krivnje
-   - Izbjegavanje rizika
-   - Otpor promjenama
-   - Nedostatak zajedničkih ciljeva
-
-**Predložak Dokumentacije:**
+### Issue #3: "Value stream map looks too complex"
+**Symptoms:** Map has too many branches and decision points
+**Cause:** Trying to map every possible scenario instead of typical flow
+**Solution:**
 ```markdown
-## Problematična Točka: [Naziv]
-**Utjecaj:** Visok/Srednji/Nizak
-**Učestalost:** Dnevno/Tjedno/Mjesečno  
-**Pogađa:** [Koje članove tima]
-**Trenutni Trošak:** [Vrijeme/Novac/Kvaliteta utjecaj]
-**Korijenski Uzrok:** [Zašto se ovo događa]
-**Potencijalno Rješenje:** [Pristup na visokoj razini]
+Focus on the "happy path" - most common scenario
+Map exceptions separately as variants
+Ask: "What happens 80% of the time?"
+Use swimlanes for different roles/teams
 ```
+**Prevention:** Start with simple linear flow, add complexity gradually
 
 ---
 
-## 🎭 **Razvoj Karaktera Ovaj Tjedan**
+## 🎭 Character Evolution This Week
 
-### **Evolucija Legacy Luke**
-- **Ponedjeljak:** "Zašto radimo post-mortem? Bila je to samo loša sreća."
-- **Srijeda:** "Pretpostavljam da bi bilo korisno znati zašto se moj kod ponaša drugačije..."
-- **Petak:** "Možda mjerenje nije tako loša ideja."
+### Legacy Luka's Journey
+**Monday:** "Why do we need to measure everything? We know what the problems are."
+**Wednesday:** "I never realized my code sits waiting for review for 2 days..."
+**Friday:** "These numbers explain why my estimates are always wrong."
+**Key Quote:** "I'm starting to see that my 'quick fixes' might be creating more problems."
 
-### **Rast Anxious Ane**  
-- **Ponedjeljak:** "Više dokumentacije? Već imam previše posla."
-- **Srijeda:** "Ove metrike pokazuju da nisam usko grlo za koje sam mislila da jesam."
-- **Petak:** "Ovi podaci bi mi mogli pomoći bolje prioritizirati testiranje."
+### Anxious Ana's Discovery
+**Monday:** "More documentation and meetings? I barely have time to test!"
+**Wednesday:** "This shows I'm not the bottleneck I thought I was..."
+**Friday:** "If we could automate the repetitive tests, I could focus on the complex scenarios."
+**Key Quote:** "Maybe automation could be my friend, not my replacement."
 
-### **Spoznaja Firefighter Filipa**
-- **Ponedjeljak:** "Ne trebamo metrike, trebamo više monitoring alata."
-- **Srijeda:** "Ovi uzorci... oni su predvidljivi."
-- **Petak:** "Ako možemo predvidjeti probleme, možda ih možemo spriječiti."
+### Firefighter Filip's Transformation
+**Monday:** "We don't need metrics, we need better monitoring tools."
+**Wednesday:** "These incident patterns... they're actually predictable."
+**Friday:** "If we can predict these problems, maybe we can prevent them."
+**Key Quote:** "I'm tired of being reactive. Let's try being proactive for once."
 
-### **Buđenje Manager Maje**
-- **Ponedjeljak:** "Koliko će dugo trajati ova dijagnostika? Imamo rokove."
-- **Srijeda:** "Ove metrike objašnjavaju zašto su naše procjene uvijek pogrešne."
-- **Petak:** "Ovi podaci bi mi mogli pomoći dati realne obveze klijentima."
-
----
-
-## 📊 **Kriteriji Ocjenjivanja**
-
-### **Laboratorijski Rezultati (40 bodova)**
-- **Izvještaj Baseline Metrika** (15 bodova)
-  - Točan izračun DORA metrika
-  - Jasna metodologija prikupljanja podataka
-  - Pravilna statistička analiza
-
-- **Value Stream Mapa** (15 bodova)
-  - Kompletno end-to-end process mapiranje
-  - Točna mjerenja vremena
-  - Jasna identifikacija rasipanja
-
-- **Popis Problematičnih Točaka** (10 bodova)
-  - Sveobuhvata dokumentacija
-  - Kvantificirane procjene utjecaja
-  - Praktični uvidi
-
-### **Unos u Character Story Journal (15 bodova)**
-Napišite refleksiju od 500 riječi iz perspektive praktikanta:
-- Što vas je najviše iznenadilo o trenutnom stanju VelocityTech-a?
-- Koja karakterova perspektiva vam je pomogla bolje razumjeti probleme?
-- Kako je vaš "sistemsko razmišljanje" moment s kavom utjecao na vašu analizu?
-- Koje prilike za transformaciju vas najviše uzbuđuju?
+### Manager Maja's Realization
+**Monday:** "How long will this assessment take? We have deadlines!"
+**Wednesday:** "These metrics explain why our project estimates are always wrong."
+**Friday:** "This data could help me give realistic commitments to clients."
+**Key Quote:** "Maybe if we measure what we do, we can actually improve how we do it."
 
 ---
 
-## 🛠️ **Alati i Resursi Uvedeni**
+## 📊 Progress Metrics: VelocityTech Transformation
+**Week 1 Improvements:**
 
-### **Alati za Mjerenje**
-- **Excel/Google Sheets** - Prikupljanje i analiza podataka
-- **Jira/Azure DevOps** - Praćenje radnih stavki
-- **Git analytics** - Metrike promjena koda
-- **Stopwatch metodologija** - Mjerenje vremena procesa
+| Metric | Before This Week | After This Week | Target (Week 15) |
+|--------|------------------|------------------|------------------|
+| Lead Time | Unknown/Estimated | 30 days (measured) | 2 hours |
+| Deployment Frequency | Unknown | Monthly (documented) | On-demand |
+| MTTR | Unknown | 4 hours (baseline) | 5 minutes |
+| Change Failure Rate | Unknown | 30% (measured) | 2% |
+| Team Satisfaction | Unknown | 3/10 (baseline) | 9/10 |
+| Process Visibility | 0% | 85% (value stream mapped) | 100% |
 
-### **Alati za Suradnju**
-- **Microsoft Teams** - VelocityTech company kanali
-- **Dijeljeni radni prostori** - Timska suradnja
-- **Predlošci intervjua** - Razgovori sa stakeholder-ima
-- **Standardi dokumentacije** - Dijeljenje znanja
-
----
-
-## 🔄 **Retrospektivna Pitanja za Tjedan 1**
-
-### **Što je Pošlo Dobro?**
-- Koji uvidi o trenutnom stanju VelocityTech-a su vas iznenadili?
-- Koje tehnike mjerenja su bile najrazjašnjavajuće?
-- Kako su interakcije s karakterima poboljšale vaše razumijevanje?
-
-### **Što je Bilo Izazovno?**
-- Koje metrike su bile najteže točno prikupiti?
-- S kakvim otporom ste se susreli od članova tima?
-- Gdje su se vaše pretpostavke o problemima pokazale pogrešne?
-
-### **Što Ćete Raditi Drugačije?**
-- Kako biste poboljšali svoj dijagnostički pristup?
-- Koji dodatni podaci bi bili vrijedni?
-- Koji odnosi sa stakeholder-ima trebaju više razvoja?
+**Key Improvements:**
+- **Visibility:** From zero process documentation to complete value stream map
+- **Measurement:** From gut feelings to objective baseline metrics
+- **Problem identification:** From blame to systematic root cause analysis
 
 ---
 
-## 🚀 **Pogled na Tjedan 2**
-
-### **Pregled Sljedeće Krize**
-Utorak ujutro, Luka stiže na posao i otkriva da je njegov najnoviji feature branch nestao. "Git konflikti," spominje Ana. "Izgubili smo 3 dana rada." Kriza version control-a počinje...
-
-### **Vaša Sljedeća Misija**
-Naoružani baseline metrikama i razumijevanjem problematičnih točaka, pomoći ćete VelocityTech-u implementirati pravilne Git workflow-e i prakse suradnje.
-
-### **Vještine Koje Ćete Razviti**
-- Git branching strategije
-- Procesi code review-a  
-- Workflow-i suradnje
-- Rješavanje konflikata
+## 🇭🇷 Croatian IT Market Reality
+Many Croatian software companies still operate without proper metrics or process visibility. This assessment approach is exactly what DevOps consultants use when entering companies like Infobip, Rimac, or Span. Your skills in measuring current state make you immediately valuable - most companies know they have problems but can't quantify them.
 
 ---
 
-## 📚 **Preporučeno Čitanje**
+## 🤔 Weekly Retrospective: "What Did We Learn?"
+**Reflection Questions:**
+1. **What surprised you most about VelocityTech's current state?** The amount of waiting time vs actual work time
+2. **Which character's perspective helped you understand problems better?** How each role sees different aspects of the same issues
+3. **How did measuring change your view of the problems?** Transformed blame into systematic understanding
+4. **What questions do you still have?** How to prioritize which problems to fix first
 
-- **"The DevOps Handbook"** - Poglavlje 1-3 (Temeljni koncepti)
-- **"Accelerate"** - Poglavlje 2 (DORA metrike istraživanje)
-- **"Value Stream Mapping"** - Karen Martin (Poboljšanje procesa)
-- **VelocityTech Interni Wiki** - Procesi i povijest tvrtke
+**Team Discussion Points:**
+- How would each VelocityTech character feel about these measurements?
+- What resistance might we encounter when presenting these findings?
+- How would you explain this week's discoveries to a skeptical manager?
+
+**Preparation for Next Week:**
+Next week we'll witness what happens when code collaboration breaks down completely - Git crisis incoming!
 
 ---
 
-*← [Nazad na Uvodnu Scenu](../story/opening-scene-hr.md) | [Dalje: Tjedan 2 Kriza Version Control-a →](week02-version-control-crisis-hr.md)*
+## 📚 Want to Learn More?
+**Essential Reading:**
+- "Accelerate" by Forsgren, Humble, Kim - DORA metrics research
+- "The DevOps Handbook" Chapters 1-3 - Foundation concepts
+
+**Hands-on Practice:**
+- Apply value stream mapping to any process in your life
+- Practice DORA metrics calculation with open source projects
+
+**Industry Insights:**
+- "State of DevOps Report" (annual) - Industry benchmarking data
+- Croatian IT salary surveys - See how DevOps skills impact compensation
 
 ---
 
-> *"Mjerenje je prvi korak koji vodi kontroli i na kraju poboljšanju. Ako nešto ne možete izmjeriti, ne možete to razumjeti. Ako to ne možete razumjeti, ne možete to kontrolirati. Ako to ne možete kontrolirati, ne možete to poboljšati."* - H. James Harrington
+*Next up: Week 2 - Version Control Crisis →*
+
+> *"You can't improve what you don't measure. And you can't measure what you can't see. This week, we made the invisible visible."* - Marko, your mentor
