@@ -231,6 +231,14 @@ cd /home/lab/monitoring
 
 **📝 Dokumentirajte:** Zabilježite IP adresu vašeg VM-a, naziv sučelja i gateway. Trebat će vam ove informacije kasnije.
 
+```bash
+# Provjera IP adrese // pronađite sučelje se 192.168.3.0/24 mrežom
+ip address show
+
+# Provjera default gateweay adrese
+ip route
+```
+
 ---
 
 ## Misija 1: Postavljanje sustava za nadzor
