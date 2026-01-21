@@ -16,10 +16,11 @@
 4. [Misija 1: Postavljanje sustava za nadzor](#misija-1-postavljanje-sustava-za-nadzor)
 5. [Misija 2: Otkrivanje mreže](#misija-2-otkrivanje-mreže)
 6. [Misija 3: Konfiguracija SNMP nadzora](#misija-3-konfiguracija-snmp-nadzora)
-7. [Misija 4: Nadzor vlastitog servera](#misija-4-nadzor-vlastitog-servera)
-8. [Misija 5: Provjera i dokumentacija](#misija-5-provjera-i-dokumentacija)
-9. [Vodič za rješavanje problema](#vodič-za-rješavanje-problema)
-10. [Uvjeti za predaju](#uvjeti-za-predaju)
+7. [Misija 4: Nadzor Windows radnih stanica](#misija-4-nadzor-windows-radnih-stanica)
+8. [Misija 5: Nadzor vlastitog servera](#misija-5-nadzor-vlastitog-servera)
+9. [Misija 6: Provjera i dokumentacija](#misija-6-provjera-i-dokumentacija)
+10. [Vodič za rješavanje problema](#vodič-za-rješavanje-problema)
+11. [Uvjeti za predaju](#uvjeti-za-predaju)
 
 ---
 
@@ -230,6 +231,7 @@ cd /home/lab/monitoring
 ```
 
 **📝 Dokumentirajte:** Zabilježite IP adresu vašeg VM-a, naziv sučelja i gateway. Trebat će vam ove informacije kasnije.
+
 
 ```bash
 # Provjera IP adrese // pronađite sučelje se 192.168.3.0/24 mrežom
@@ -532,40 +534,6 @@ nano prometheus.yml
 **Dodajte sljedeće na dno datoteke (zadržite postojeće `scrape_configs`):**
 
 ```yaml
-  # MikroTik RB3011 (Router)
-  - job_name: 'mikrotik-rb3011'
-    static_configs:
-      - targets:
-        - 192.168.3.X  # Zamijenite X stvarnom IP adresom koju ste otkrili
-    metrics_path: /snmp
-    params:
-      module: [if_mib]
-      auth: [public_v2]
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement: snmp_exporter:9116
-
-  # MikroTik CSS326 (Switch)
-  - job_name: 'mikrotik-css326'
-    static_configs:
-      - targets:
-        - 192.168.3.Y  # Zamijenite Y stvarnom IP adresom koju ste otkrili
-    metrics_path: /snmp
-    params:
-      module: [if_mib]
-      auth: [public_v2]
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement: snmp_exporter:9116
-
   # Cisco Catalyst 2950 (Switch)
   - job_name: 'cisco-2950'
     static_configs:
@@ -583,6 +551,8 @@ nano prometheus.yml
       - target_label: __address__
         replacement: snmp_exporter:9116
 ```
+
+**Napomena:** Za sada ćemo nadzirati samo Cisco 2950 switch. U kasnijoj vježbi naučit ćete kako dodati više uređaja poput MikroTik routera i switcha.
 
 **Važno:** Zamijenite IP adrese (`192.168.3.X`, `.Y`, `.Z`) stvarnim IP-ovima koje ste otkrili!
 
@@ -646,13 +616,106 @@ Svi bi trebali pokazivati status "UP" (ovo može potrajati do 30 sekundi).
 
 ---
 
-## Misija 4: Nadzor vlastitog servera
+## Misija 4: Nadzor Windows radnih stanica
+
+**Cilj:** Dodati Windows radne stanice kao ciljeve za nadzor njihovih performansi.
+
+Kako biste dobili više prakse s dodavanjem ciljeva i pripremili bogatiji skup podataka za 2. tjedan, sada ćete dodati sve Windows radne stanice u vašoj učionici kao ciljeve nadzora.
+
+### Korak 4.1: Preuzimanje i instalacija `windows_exporter`-a
+
+Na **svakoj Windows radnoj stanici** u učionici, izvršite sljedeće korake:
+
+1.  **Preuzmite instalacijski program:**
+    *   Otvorite web preglednik i idite na službenu stranicu s izdanjima za `windows_exporter`:
+        [https://github.com/prometheus-community/windows_exporter/releases](https://github.com/prometheus-community/windows_exporter/releases)
+    *   Preuzmite najnoviju `.msi` datoteku (npr. `windows_exporter-0.25.1-amd64.msi`).
+
+2.  **Instalirajte exporter:**
+    *   Pokrenite preuzeti `.msi` instalacijski program.
+    *   Prihvatite zadane postavke tijekom instalacije. Ovo će instalirati `windows_exporter` kao Windows servis.
+
+### Korak 4.2: Provjera instalacije
+
+1.  **Provjerite servis:**
+    *   Pritisnite `Win + R`, upišite `services.msc` i pritisnite Enter.
+    *   U popisu servisa pronađite `windows_exporter`.
+    *   Provjerite je li njegov status "Running".
+
+2.  **Provjerite metrike:**
+    *   Na istoj radnoj stanici, otvorite web preglednik i idite na:
+        `http://localhost:9182/metrics`
+    *   Trebali biste vidjeti veliku stranicu s tekstualnim metrikama. To potvrđuje da exporter radi ispravno.
+
+**✅ Kontrolna točka:** Ponovite ovaj postupak na barem nekoliko računala u učionici kako biste osigurali da radi.
+
+### Korak 4.3: Prikupljanje IP adresa
+
+Vaš zadatak je stvoriti popis svih IPv4 adresa radnih stanica u učionici.
+
+```bash
+# Na svakoj Windows radnoj stanici, IP adresu možete pronaći otvaranjem Command Prompt-a (cmd) i upisivanjem:
+ipconfig
+```
+
+**📝 Dokumentirajte:** Stvorite jednostavnu tekstualnu datoteku ili popis svih IP adresa. Trebat će vam za sljedeći korak.
+
+### Korak 4.4: Dodavanje radnih stanica u Prometheus konfiguraciju
+
+Sada dodajte novi posao (job) u vašu `prometheus.yml` datoteku kako biste prikupljali podatke s ovih novih ciljeva.
+
+```bash
+cd /home/lab/monitoring
+nano prometheus.yml
+```
+
+**Dodajte sljedeći novi posao u vašu `scrape_configs` sekciju:**
+
+```yaml
+  # Windows radne stanice u učionici
+  - job_name: 'windows-workstations'
+    static_configs:
+      - targets:
+        - '192.168.3.A:9182'  # Zamijenite stvarnim IP adresama iz učionice
+        - '192.168.3.B:9182'
+        - '192.168.3.C:9182'
+        # Ovdje dodajte sve ostale IP adrese radnih stanica
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: '(.*):9182'
+        target_label: instance
+        replacement: '$1'
+```
+
+**Važno:**
+- Zamijenite primjere IP adresa sa **stvarnim IP adresama** koje ste prikupili.
+- Pripazite da uključite port `:9182` za svaki cilj.
+
+**Spremite i izađite.**
+
+### Korak 4.5: Ponovno učitavanje konfiguracije i provjera
+
+```bash
+# Ponovno pokrenite Prometheus kako bi se primijenila nova konfiguracija
+docker-compose restart prometheus
+```
+
+Pričekajte oko 30 sekundi, a zatim se vratite na stranicu Prometheus Targets u vašem pregledniku:
+`http://192.168.3.10:9090/targets`
+
+**✅ Kontrolna točka:** Trebali biste vidjeti novi `windows-workstations` posao, i svi ciljevi radnih stanica trebali bi se na kraju prikazati kao "UP".
+
+**Uvid u 2. tjedan:** U sljedećoj vježbi koristit ćete unaprijed pripremljenu Grafana nadzornu ploču (dashboard) specifičnu za `windows_exporter`, koja će vam pružiti detaljan pregled performansi svih računala u učionici.
+
+---
+
+## Misija 5: Nadzor vlastitog servera
 
 **Cilj:** Osigurati da se server za nadzor sam nadzire.
 
 Ovo bi već trebalo raditi iz naše početne konfiguracije, ali provjerimo.
 
-### Korak 4.1: Provjerite Node Exporter
+### Korak 5.1: Provjerite Node Exporter
 
 ```bash
 # Provjerite da Node Exporter izlaže metrike
@@ -667,7 +730,7 @@ node_cpu_seconds_total{cpu="0",mode="idle"} 12345.67
 ...
 ```
 
-### Korak 4.2: Upitajte metrike u Prometheusu
+### Korak 5.2: Upitajte metrike u Prometheusu
 
 U Prometheus web sučelju (`http://192.168.3.10:9090`):
 
@@ -684,11 +747,11 @@ U Prometheus web sučelju (`http://192.168.3.10:9090`):
 
 ---
 
-## Misija 5: Provjera i dokumentacija
+## Misija 6: Provjera i dokumentacija
 
 **Cilj:** Dokazati da vaš sustav za nadzor radi i dokumentirati implementaciju.
 
-### Korak 5.1: Završna provjera zdravlja
+### Korak 6.1: Završna provjera zdravlja
 
 Pokrenite ove naredbe za provjeru:
 
@@ -703,7 +766,7 @@ docker-compose logs prometheus | tail -n 50
 docker-compose logs snmp_exporter | tail -n 50
 ```
 
-### Korak 5.2: Testirajte prikupljanje podataka
+### Korak 6.2: Testirajte prikupljanje podataka
 
 U Prometheus web sučelju, pokrenite ove upite za provjeru podataka sa svakog uređaja:
 
@@ -725,9 +788,15 @@ rate(ifHCInOctets[5m]) * 8
 ```
 Ovo pokazuje dolazni promet u bitovima po sekundi.
 
-**✅ Kontrolna točka:** Sva tri upita bi trebala vratiti podatke za vaše mrežne uređaje.
+**Upit 4: Korištenje CPU-a na Windowsima**
+```promql
+100 - (avg by (instance) (rate(windows_cpu_time_total{mode="idle"}[2m])) * 100)
+```
+Ovo prikazuje postotak iskorištenosti CPU-a na vašim Windows radnim stanicama.
 
-### Korak 5.3: Test trajnosti podataka
+**✅ Kontrolna točka:** Sva četiri upita bi trebala vratiti podatke za vaše odgovarajuće uređaje.
+
+### Korak 6.3: Test trajnosti podataka
 
 ```bash
 # Restartujte cijeli stack
@@ -741,7 +810,7 @@ sleep 30
 curl http://localhost:9090/api/v1/targets | grep -c '"health":"up"'
 ```
 
-**✅ Kontrolna točka:** Broj bi trebao odgovarati broju ciljeva koje ste konfigurirali (trebalo bi biti 5 ili više).
+**✅ Kontrolna točka:** Broj bi trebao odgovarati broju ciljeva koje ste konfigurirali.
 
 ---
 
@@ -845,6 +914,7 @@ Za svaki upit niže, uključite snimku zaslona rezultata u Prometheusu:
 - `up` - Pokazuje sve ciljeve
 - `sysUpTime / 100 / 60 / 60 / 24` - Vrijeme rada uređaja u danima
 - `rate(ifHCInOctets[5m]) * 8` - Mrežni promet
+- `100 - (avg by (instance) (rate(windows_cpu_time_total{mode="idle"}[2m])) * 100)` - Korištenje CPU-a na Windowsima
 
 #### 6. Refleksija (maksimalno 500 riječi)
 Odgovorite na ova pitanja:
