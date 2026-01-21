@@ -6,6 +6,13 @@
 **Estimated Time:** 4-6 hours (2 lab sessions)
 **Learning Outcomes:** LO6, LO7
 
+# Vodič za laboratorijske vježbe (Tjedan 2): Operacija Dark Network
+## Zapovjedni centar – Vizualizacija i nadzorne ploče (Dashboards)
+Kolegij: Projektiranje komunikacijskih mreža 
+Trajanje vježbe: Tjedan 2 od 3 
+Predviđeno vrijeme: 4-6 sati (2 laboratorijska termina) 
+Ishodi učenja: IU6, IU7
+
 ---
 
 ## Table of Contents
@@ -23,30 +30,29 @@
 
 ---
 
-## Overview & Objectives
+## Pregled i ciljevi
 
-### What You're Building
+### Što gradite
+Ovog tjedna transformirat ćete sirove metričke podatke koje ste prikupili prošlog tjedna u **vizualne nadzorne ploče** koje svatko može razumjeti.
 
-This week, you'll transform the raw metrics you collected last week into **visual dashboards** that anyone can understand.
+Dodat ćete **Grafanu** u svoj monitoring "stack":
+- **Grafana** – Platforma za vizualizaciju i izradu nadzornih ploča.
+- **Povezivanje** s vašim postojećim Prometheus podacima.
+- **Gotove nadzorne ploče** iz Grafana zajednice.
+- **Prilagođeni prikazi** skrojeni prema vašoj mreži.
 
-You'll be adding **Grafana** to your monitoring stack:
-- **Grafana** - Visualization and dashboarding platform
-- **Connection** to your existing Prometheus data
-- **Pre-built dashboards** from the Grafana community
-- **Customized views** tailored to your network
+### Ciljevi učenja
 
-### Learning Objectives
+Nakon završetka ove vježbe, moći ćete:
+- ✅ Implementirati Grafanu koristeći Docker Compose.
+- ✅ Konfigurirati Prometheus kao izvor podataka (Data Source) u Grafani.
+- ✅ Importirati i koristiti nadzorne ploče koje je izradila zajednica.
+- ✅ Razumjeti komponente nadzorne ploče (paneli, upiti, varijable).
+- ✅ Prilagoditi nadzorne ploče za specifične slučajeve korištenja.
+- ✅ Primijeniti FCAPS koncepte (Upravljanje kvarovima i performansama).
+- ✅ Kreirati vizualizacije prilagođene menadžmentu (executive-friendly).
 
-After completing this lab, you will be able to:
-- ✅ Deploy Grafana using Docker Compose
-- ✅ Configure Prometheus as a data source in Grafana
-- ✅ Import and use community-built dashboards
-- ✅ Understand dashboard components (panels, queries, variables)
-- ✅ Customize dashboards for specific use cases
-- ✅ Apply FCAPS concepts (Fault and Performance Management)
-- ✅ Create executive-friendly visualizations
-
-### The Big Picture
+### Šira slika (Arhitektura)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -78,54 +84,54 @@ After completing this lab, you will be able to:
 
 ---
 
-## Prerequisites
+## Preduvjeti
 
-### What You Need From Week 1
+### Što vam je potrebno iz 1. tjedna
 
-- ✅ Prometheus running and collecting data from your server, a Cisco switch, and your classroom's Windows workstations.
-- ✅ All configured targets showing "UP" in Prometheus.
-- ✅ Access to your monitoring VM.
+- ✅ Pokrenut Prometheus koji prikuplja podatke s vašeg servera, Cisco switcha i Windows radnih stanica u učionici.
+- ✅ Svi konfigurirani ciljevi (targets) moraju imati status "UP" u Prometheusu.
+- ✅ Pristup vašoj monitoring VM.
 
-### Verify Week 1 Setup
+### Provjera postavki iz 1. tjedna
 
-Before starting, confirm everything from Week 1 is still working:
+Prije početka, potvrdite da sve iz prošlog tjedna i dalje radi:
 
 ```bash
-# SSH to your VM
+# SSH na vašu VM
 ssh root@10.10.50.10
 
-# Navigate to monitoring directory
+# Navigirajte u direktorij za monitoring
 cd /opt/monitoring
 
-# Check containers are running
+# Provjerite rade li kontejneri
 docker-compose ps
 ```
 
-**✅ Checkpoint:** You should see 3 containers: `prometheus`, `snmp_exporter`, `node_exporter` - all "Up".
+**✅ Checkpoint:** Trebali biste vidjeti 3 kontejnera: `prometheus`, `snmp_exporter`, `node_exporter` – svi moraju biti "Up".
 
-**Check Prometheus Targets:**
-Open `http://10.10.50.10:9090/targets` in your browser.
+**Provjera Prometheus targeta:**
+Otvorite `http://IP_adresa:9090/targets` u pregledniku.
 
-**✅ Checkpoint:** All your targets (`prometheus`, `monitoring-server`, `cisco-2950`, and `windows-workstations`) should be "UP".
+**✅ Checkpoint:** Svi vaši ciljevi (`prometheus`, `monitoring-server`, `cisco-2950` i `windows-workstations`) trebaju biti "UP".
 
-**If anything from Week 1 is broken, fix it before proceeding!**
+**Ako je bilo što iz 1. tjedna neispravno, popravite to prije nastavka!**
 
 ---
 
-## Mission 1: Deploy Grafana
+## Misija 1: Implementacija Grafane
 
-**Objective:** Add Grafana to your Docker Compose stack.
+**Cilj:** Dodati Grafanu u vaš Docker Compose "stack".
 
-### Step 1.1: Update Docker Compose Configuration
+### Korak 1.1: Ažuriranje Docker Compose konfiguracije
 
-Edit your existing `docker-compose.yml`:
+Uredite postojeću `docker-compose.yml` datoteku:
 
 ```bash
 cd /opt/monitoring
 nano docker-compose.yml
 ```
 
-**Add the Grafana service** to the `services:` section (keep all existing services):
+**Dodajte grafana servis** u sekciju services: (zadržite sve postojeće servise):
 
 ```yaml
   grafana:
@@ -145,15 +151,15 @@ nano docker-compose.yml
       - prometheus
 ```
 
-**Add the Grafana volume** to the `volumes:` section at the bottom:
+**Dodajte Grafana volumen** u sekciju `volumes`: na dnu:
 
 ```yaml
 volumes:
   prometheus_data:
-  grafana_data:  # Add this line
+  grafana_data:  # Dodajte ovu liniju
 ```
 
-**Save and exit** (Ctrl+X, Y, Enter)
+**Spremite i izađite** (Ctrl+X, Y, Enter)
 
 ### Step 1.2: Deploy Grafana
 
